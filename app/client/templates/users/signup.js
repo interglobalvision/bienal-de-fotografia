@@ -3,21 +3,32 @@ Template.signup.events = {
     event.preventDefault();
 
     var user = {
-      username: $('#username').val(),
       email: $('#email').val(),
       password: $('#password').val(),
     };
 
-    if (!user.username || !user.email || !user.password) {
+    if (!user.email || !user.password) {
 
-      console.log('Missing user input values');
+      Materialize.toast('Por favor llena todos los campos', 3000);
 
     } else {
       Accounts.createUser(user, function(error) {
         if (error) {
+          Materialize.toast("Error", 2000);
+          Materialize.toast(error.reason, 3000);
           console.log(error);
         } else {
-          Router.go('/');
+          var userId = Meteor.userId();
+
+          Meteor.call('setupApplicant', userId, function(error) {
+            if (error) {
+              Materialize.toast("Error", 2000);
+              Materialize.toast(error.reason, 3000);
+              console.log(error);
+            } else {
+              Router.go('/registro');
+            }
+          });
 
         }
       });
