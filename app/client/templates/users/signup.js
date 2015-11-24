@@ -20,20 +20,15 @@ Template.signup.events = {
         } else {
           var userId = Meteor.userId();
 
-          Meteor.call('setupUser', userId, function(error) {
+          Meteor.call('setupApplicant', userId, function(error) {
             if (error) {
               Materialize.toast("Error", 2000);
               Materialize.toast(error.reason, 3000);
               console.log(error);
-            } else if (Roles.userIsInRole(userId, 'admin')) {
-              Router.go('/admin');
-            } else if (Roles.userIsInRole(userId, 'applicant')) {
-              Router.go('/registro');
             } else {
-              Router.go('/');
+              Router.go('/registro');
             }
           });
-          Router.go('/');
 
         }
       });
