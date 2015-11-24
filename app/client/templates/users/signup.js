@@ -3,12 +3,11 @@ Template.signup.events = {
     event.preventDefault();
 
     var user = {
-      username: $('#username').val(),
       email: $('#email').val(),
       password: $('#password').val(),
     };
 
-    if (!user.username || !user.email || !user.password) {
+    if (!user.email || !user.password) {
 
       Materialize.toast('Por favor llena todos los campos', 3000);
 
