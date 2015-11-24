@@ -16,12 +16,14 @@ Template.signup.events = {
         if (error) {
           Materialize.toast("Error", 2000);
           Materialize.toast(error.reason, 3000);
+          console.log(error);
         } else {
           var userId = Meteor.userId();
 
           Meteor.call('setupUser', userId, function(error) {
             if (error) {
-              Materialize.toast(TAPi18n.__('alert-error'), 2000);
+              Materialize.toast("Error", 2000);
+              Materialize.toast(error.reason, 3000);
               console.log(error);
             } else if (Roles.userIsInRole(userId, 'admin')) {
               Router.go('/admin');
