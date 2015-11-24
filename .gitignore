@@ -1,0 +1,5 @@
+.DS_Store
+node_modules
+/app/settings.json
+/app/packages
+/app/.meteor/local
