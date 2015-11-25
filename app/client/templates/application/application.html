@@ -1,0 +1,53 @@
+<template name="application">
+    <div class="container">
+    {{#autoForm schema="ApplicationSchema" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" }}
+    <div class="section">
+      <div class="card">
+        <div class="card-content">
+          <h4>Datos Personales</h4>
+          {{> afQuickField name='name'}}
+          {{> afQuickField name='nationality'}}
+          {{> afQuickField name='age'}}
+          <h5>Dirección</h5>
+          {{> afQuickField name='address.$.streetAndNumber'}}
+          {{> afQuickField name='address.$.neighborhood'}}
+          {{> afQuickField name='address.$.municipality'}}
+          {{> afQuickField name='address.$.state'}}
+          {{> afQuickField name='address.$.zip'}}
+          {{> afQuickField name='telephone'}}
+          {{> afQuickField name='scholarity'}}
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-default saveApplication">Guardar</button>
+
+    <div class="section">
+      <div class="card">
+        <div class="card-content">
+          <h4>Serie</h4>
+          {{> afQuickField name='series.$.title'}}
+          {{> afQuickField name='series.$.date'}}
+          {{> afQuickField name='series.$.type'}}
+          {{> afQuickField name='series.$.description'}}
+          {{> afQuickField name='series.$.layout'}}
+          {{> afQuickField name='series.$.requirements'}}
+          {{> afArrayField name='works'}}
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-default saveApplication">Guardar</button>
+
+    <div class="section">
+      <div class="card">
+        <div class="card-content">
+          <h4>Curriculum</h4>
+          {{> afQuickField name='cv'}}
+          {{> afQuickField name='identificationDocument'}}
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-default saveApplication">Guardar</button>
+
+    {{/autoForm}}
+  </div>
+</template>
