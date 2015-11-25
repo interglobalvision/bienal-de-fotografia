@@ -41,6 +41,10 @@ Router.map(function() {
 
   this.route('content');
 
+  this.route('application', {
+    path: '/registro',
+  });
+
   // Users
 
   this.route('login');
