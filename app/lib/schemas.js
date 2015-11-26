@@ -5,7 +5,12 @@ ApplicationSchema = new SimpleSchema({
   // Personal data
   name: {
     type: String,
-    label: "Nombre",
+    label: "Nombre completo",
+  },
+  pseudonym: {
+    type: String,
+    label: "Nombre artistico",
+    optional: true,
   },
   nationality: {
     type: String,
@@ -14,6 +19,7 @@ ApplicationSchema = new SimpleSchema({
   age: {
     type: Number,
     label: "Edad",
+    min: 0,
   },
   address: {
     type: Object,
@@ -21,14 +27,17 @@ ApplicationSchema = new SimpleSchema({
   "address.$.streetAndNumber": {
     type: String,
     label: "Calle y Numero",
+    optional: false,
   },
   "address.$.neighborhood": {
     type: String,
     label: "Colonia",
+    optional: false,
   },
   "address.$.municipality": {
     type: String,
     label: "Municipio",
+    optional: false,
   },
   "address.$.state": {
     type: String,
@@ -36,10 +45,7 @@ ApplicationSchema = new SimpleSchema({
     autoform: {
       type: "select",
       options: function() {
-        return [
-        { value: 'a', label: 'a', },
-        { value: 'b', label: 'b', },
-        ];
+        return Estados; 
       },
     }
   },
@@ -50,10 +56,24 @@ ApplicationSchema = new SimpleSchema({
   telephone: {
     type: String,
     label: "Telefono / Fax",
+    autoform: {
+      'placeholder': '(123) 456 7890', 
+    },
   },
   scholarity: {
     type: String,
     label: "Nivel de Escolaridad",
+    autoform: {
+      type: "select",
+      options: function() {
+        return [
+        { value: 'media-superior', label: 'Media Superior'},
+        { value: 'tecnica', label: 'Técnica'},
+        { value: 'superior', label: 'Superior'},
+        { value: 'posgrado', label: 'Posgrado'},
+        ];
+      },
+    },
     allowedValues: [
       'Media Superior',
       'Técnica',
@@ -70,6 +90,9 @@ ApplicationSchema = new SimpleSchema({
   },
   "works.$.image": {
     type: String,
+    autoform: {
+      type: "imageUpload",
+    },
   },
   "works.$.title": {
     type: String,
@@ -86,15 +109,11 @@ ApplicationSchema = new SimpleSchema({
     label: "Lugar",
     optional: true,
   },
-  "works.$.size": {
-    type: Object,
-    label: "Tamaño",
-  },
-  "works.$.size.width": {
+  "works.$.width": {
     type: Number,
     label: "Ancho (cm)",
   },
-  "works.$.size.height": {
+  "works.$.height": {
     type: Number,
     label: "Alto (cm)",
   },
@@ -127,40 +146,59 @@ ApplicationSchema = new SimpleSchema({
   },
   "series.$.description": {
     type: String,
-    label: "Marco conceptual (propósito y/o significado de la obra)",
+    label: "Descripción del proyecto",
+    max: 1500,
+    autoform: {
+      type: 'textarea',
+      rows: 10,
+    },
   },
   "series.$.layout": {
     type: String,
     label: "Croquis explicativo de montaje",
+    autoform: {
+      type: "imageUpload",
+    },
   },
   "series.$.requirements": {
     type: String,
     label: "Requerimientos especiales del montaje",
-  },
-
-  // Curriculum
-  cv: {
-    type: String,
-    label: "C.V.",
-    max: 2000,
+    max: 1500,
     autoform: {
       type: 'textarea',
-      rows: 5,
+      rows: 10,
     },
   },
+
+  cv: {
+    type: String,
+    label: "Semblanza curricular",
+    max: 1500,
+    autoform: {
+      type: 'textarea',
+      rows: 10,
+    },
+  },
+
   identificationDocument: {
     type: String,
     label: "Documento de identificación (IFE o documento probatorio)",
+    autoform: {
+      type: "imageUpload",
+    },
   },
 
   // Hidden
   folioNumber: {
     type: Number,
     label: "Numero de Folio",
+    min: 0,
   },
 
   rating: {
     type: Number,
     defaultValue: 0,
+    min: 0,
   },
+
 });
