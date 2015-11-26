@@ -6,6 +6,7 @@
         <div class="card-content">
           <h4>Datos Personales</h4>
           {{> afQuickField name='name'}}
+          {{> afQuickField name='pseudonym'}}
           {{> afQuickField name='nationality'}}
           {{> afQuickField name='age'}}
           <h5>Dirección</h5>
@@ -16,6 +17,23 @@
           {{> afQuickField name='address.$.zip'}}
           {{> afQuickField name='telephone'}}
           {{> afQuickField name='scholarity'}}
+          {{> afQuickField name='cv'}}
+          
+          <blockquote>
+            <p>Párrafo de máximo 1,500 caracteres contando espacios y con la siguiente estructura:</p>
+            <ol>
+              <li>Nombre artístico.</li>
+              <li>Origen (país, estado y fecha de nacimiento).</li>
+              <li>Estudios.</li>
+              <li>Principales exposiciones (individuales y colectivas).</li>
+              <li>Principales residencias.</li>
+              <li>Principales colecciones con su obra.</li>
+              <li>Principales premios.</li>
+              <li>Publicaciones más recientes.</li>
+              <li>Cualquier información extra no prevista en los puntos anteriores.</li>
+              <li>Página web.</li>
+            </ol>
+          </blockquote>
         </div>
       </div>
     </div>
@@ -40,8 +58,6 @@
     <div class="section">
       <div class="card">
         <div class="card-content">
-          <h4>Curriculum</h4>
-          {{> afQuickField name='cv'}}
           {{> afQuickField name='identificationDocument'}}
         </div>
       </div>

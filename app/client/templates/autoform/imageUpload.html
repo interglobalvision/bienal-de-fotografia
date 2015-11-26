@@ -1,0 +1,21 @@
+<template name='imageUpload'>
+  <div class="cas">
+	<form enctype="multipart/form-data" class="upload-form">
+		<input type="file" class="image-upload-input u-hidden">
+    <input {{this.atts}} type="hidden" value="{{this.value}}">
+    <img src="{{this.value}}" class="image-upload-thumbnail" />
+		<a class="btn grey darken-1 image-upload-trigger">Cargar imagen</a>
+    <div class="preloader-wrapper small">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</template>
