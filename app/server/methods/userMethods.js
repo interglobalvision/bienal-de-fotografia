@@ -6,7 +6,7 @@ Meteor.methods({
     // Setup Applicant Role
     Roles.addUsersToRoles(userId, ['applicant',]);
 
-    // TODO: Setup applicant's application
-
+    // Create empty application for the user
+    Applications.insert({userId: userId, status: 'saved',});
   },
 });
