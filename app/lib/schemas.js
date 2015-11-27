@@ -5,164 +5,172 @@ ApplicationSchema = new SimpleSchema({
   // Personal data
   name: {
     type: String,
-    label: "Nombre completo",
+    label: 'Nombre completo',
   },
   pseudonym: {
     type: String,
-    label: "Nombre artistico",
+    label: 'Nombre artistico',
     optional: true,
   },
   nationality: {
     type: String,
-    label: "Nacionalidad",
+    label: 'Nacionalidad',
   },
   age: {
     type: Number,
-    label: "Edad",
+    label: 'Edad',
     min: 0,
   },
-  address: {
-    type: Object,
-  },
-  "address.$.streetAndNumber": {
+  streetAndNumber: {
     type: String,
-    label: "Calle y Numero",
+    label: 'Calle y Numero',
     optional: false,
   },
-  "address.$.neighborhood": {
+  neighborhood: {
     type: String,
-    label: "Colonia",
+    label: 'Colonia',
     optional: false,
   },
-  "address.$.municipality": {
+  municipality: {
     type: String,
-    label: "Municipio",
+    label: 'Municipio',
     optional: false,
   },
-  "address.$.state": {
+  state: {
     type: String,
-    label: "Estado",
+    label: 'Estado',
     autoform: {
-      type: "select",
+      type: 'select',
       options: function() {
         return Estados; 
       },
-    }
+    },
   },
-  "address.$.zip": {
+  zip: {
     type: String,
-    label: "C.P.",
+    label: 'C.P.',
   },
   telephone: {
     type: String,
-    label: "Telefono / Fax",
+    label: 'Telefono / Fax',
     autoform: {
       'placeholder': '(123) 456 7890', 
     },
   },
   scholarity: {
     type: String,
-    label: "Nivel de Escolaridad",
+    label: 'Nivel de Escolaridad',
     autoform: {
-      type: "select",
+      type: 'select',
       options: function() {
         return [
-        { value: 'media-superior', label: 'Media Superior'},
-        { value: 'tecnica', label: 'Técnica'},
-        { value: 'superior', label: 'Superior'},
-        { value: 'posgrado', label: 'Posgrado'},
+        {value: 'media-superior', label: 'Media Superior',},
+        {value: 'tecnica', label: 'Técnica',},
+        {value: 'superior', label: 'Superior',},
+        {value: 'posgrado', label: 'Posgrado',},
         ];
       },
     },
     allowedValues: [
-      'Media Superior',
-      'Técnica',
-      'Superior',
-      'Posgrado',
-      ],
+      'media-superior',
+      'tecnica',
+      'superior',
+      'posgrado',
+    ],
   },
 
   // Works
   works: {
-    type: [Object],
+    type: [Object,],
     min: 1,
-    label: "Obras",
+    label: 'Obras',
   },
-  "works.$.image": {
+  'works.$.image': {
     type: String,
+    optional: true, // To test before implementing upload
     autoform: {
-      type: "imageUpload",
+      type: 'imageUpload',
     },
   },
-  "works.$.title": {
+  'works.$.title': {
     type: String,
-    label: "Título",
+    label: 'Título',
     optional: true,
   },
-  "works.$.date": {
+  'works.$.date': {
     type: Date,
-    label: "Fecha",
+    label: 'Fecha',
     optional: true,
   },
-  "works.$.place": {
+  'works.$.place': {
     type: String,
-    label: "Lugar",
+    label: 'Lugar',
     optional: true,
   },
-  "works.$.width": {
+  'works.$.width': {
     type: Number,
-    label: "Ancho (cm)",
+    label: 'Ancho (cm)',
   },
-  "works.$.height": {
+  'works.$.height': {
     type: Number,
-    label: "Alto (cm)",
+    label: 'Alto (cm)',
   },
-  "works.$.medium": {
+  'works.$.medium': {
     type: String,
-    label: "Técnica",
+    label: 'Técnica',
   },
 
   // Series
-  series: {
-    type: Object,
-    label: "Obra",
-  },
-  "series.$.title": {
+  seriesTitle: {
     type: String,
-    label: "Título de la Serie",
+    label: 'Título de la Serie',
   },
-  "series.$.date": {
+
+  // TODO this field is causing validation problems
+  seriesDate: {
     type: Date,
-    label: "Fecha de la Serie",
+    label: 'Fecha de la Serie',
+    optional: true, // To test before implementing upload
   },
-  "series.$.type": {
+  seriesType: {
     type: String,
-    label: "Tipo",
+    label: 'Tipo',
     allowedValues: [
-      "Foto",
-      "Proyecto audiovisual/multimedia",
-      "Instalación (3D)",
-      ],
+      'foto',
+      'audiovisual',
+      '3d',
+    ],
+    autoform: {
+      type: 'select',
+      options: function() {
+        return {
+          'foto': 'Foto',
+          'audiovisual' : 'Proyecto audiovisual/multimedia',
+          '3d': 'Instalación [3D]',
+        };
+      },
+    },
   },
-  "series.$.description": {
+  seriesDescription: {
     type: String,
-    label: "Descripción del proyecto",
+    label: 'Descripción del proyecto',
     max: 1500,
     autoform: {
       type: 'textarea',
       rows: 10,
     },
   },
-  "series.$.layout": {
+  seriesLayout: {
     type: String,
-    label: "Croquis explicativo de montaje",
+    label: 'Croquis explicativo de montaje',
+    optional: true, // To test before implementing upload
     autoform: {
-      type: "imageUpload",
+      type: 'imageUpload',
     },
   },
-  "series.$.requirements": {
+  seriesRequirements: {
     type: String,
-    label: "Requerimientos especiales del montaje",
+    label: 'Requerimientos especiales del montaje',
     max: 1500,
     autoform: {
       type: 'textarea',
@@ -172,7 +180,7 @@ ApplicationSchema = new SimpleSchema({
 
   cv: {
     type: String,
-    label: "Semblanza curricular",
+    label: 'Semblanza curricular',
     max: 1500,
     autoform: {
       type: 'textarea',
@@ -182,16 +190,17 @@ ApplicationSchema = new SimpleSchema({
 
   identificationDocument: {
     type: String,
-    label: "Documento de identificación (IFE o documento probatorio)",
+    label: 'Documento de identificación (IFE o documento probatorio)',
+    optional: true, // To test before implementing upload
     autoform: {
-      type: "imageUpload",
+      type: 'imageUpload',
     },
   },
 
   // Hidden
   folioNumber: {
     type: Number,
-    label: "Numero de Folio",
+    label: 'Numero de Folio',
     min: 0,
   },
 
