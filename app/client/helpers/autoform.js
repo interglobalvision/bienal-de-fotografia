@@ -8,3 +8,18 @@ AutoForm.addInputType('imageUpload', {
     return imageUrl;
   },
 });
+
+AutoForm.hooks({
+  insertApplicationForm: {
+    onSuccess: function(insertDoc, updateDoc, currentDoc) {
+      Meteor.call('submitApplication', this.docId, function(error, response) {
+        if (error) {
+          console.log(error);
+          Materialize.toast(TAPi18n.__('alert-error'), 3000);
+        } else {
+          Materialize.toast(TAPi18n.__('alert-application_saved'), 3000);
+        }
+      });
+    },
+  },
+});

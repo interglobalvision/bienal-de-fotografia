@@ -31,4 +31,4 @@ Estados = {
   "veracruz-de-ignacio-de-la-llave": "Veracruz de Ignacio de la Llave",
   "yucatan": "Yucatan",
   "zacatecas": "Zacatecas",
-}
+};

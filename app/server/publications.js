@@ -17,3 +17,9 @@ Meteor.publish('allItems', function() {
 Meteor.publish('singleItem', function(id) {
   return Items.find(id);
 });
+
+// ---- Applications
+// Publish a single item
+Meteor.publish('singleApplication', function(userId) {
+  return Applications.find({userId: userId,});
+});
