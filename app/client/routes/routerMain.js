@@ -21,14 +21,14 @@ var filters = {
   isLoggedIn: function() {
     if (!(Meteor.loggingIn() || Meteor.user())) {
       alert('Please Log In First.');
-      this.render('login');
-      this.stop();
+      Router.go('login');
     }
+    this.next();
   },
 
 };
 
-Router.onBeforeAction(filters.isLoggedIn, {only: ['registro',],});
+Router.onBeforeAction(filters.isLoggedIn, {only: ['application',],});
 
 // Routes
 
