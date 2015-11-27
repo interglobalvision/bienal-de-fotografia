@@ -1,12 +1,5 @@
 // Methods
 Meteor.methods({
-  createApplication: function(application) {
-    if (!Meteor.userId()) {
-      throw new Meteor.Error('not-signed-in', 'You must register a user first before creating an application.');
-    }
-
-    return Applications.insert(application);
-  },
 
   saveApplication: function(applicationId, applicationUpdate) {
 
