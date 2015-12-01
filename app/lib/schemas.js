@@ -53,30 +53,28 @@ ApplicationSchema = new SimpleSchema({
   telephone: {
     type: String,
     label: 'Telefono / Fax',
+    min: 10,
     autoform: {
-      'placeholder': '(123) 456 7890', 
+      placeholder: '(123) 456 7890', 
     },
   },
-  scholarity: {
+  cellphone: {
     type: String,
-    label: 'Nivel de Escolaridad',
+    label: 'Celular',
+    optional: true,
+    min: 10,
     autoform: {
-      type: 'select',
-      options: function() {
-        return [
-        {value: 'media-superior', label: 'Media Superior',},
-        {value: 'tecnica', label: 'Técnica',},
-        {value: 'superior', label: 'Superior',},
-        {value: 'posgrado', label: 'Posgrado',},
-        ];
-      },
+      placeholder: '(123) 456 7890', 
     },
-    allowedValues: [
-      'media-superior',
-      'tecnica',
-      'superior',
-      'posgrado',
-    ],
+  },
+  otherPhone: {
+    type: String,
+    label: 'Otro telefono',
+    optional: true,
+    min: 10,
+    autoform: {
+      placeholder: '(123) 456 7890', 
+    },
   },
 
   // Works
@@ -85,22 +83,20 @@ ApplicationSchema = new SimpleSchema({
     min: 1,
     label: 'Obras',
   },
-  'works.$.image': {
-    type: String,
-    optional: true, // To test before implementing upload
-    autoform: {
-      type: 'imageUpload',
-    },
-  },
   'works.$.title': {
     type: String,
     label: 'Título',
     optional: true,
   },
   'works.$.date': {
-    type: Date,
-    label: 'Fecha',
-    optional: true,
+    type: Number,
+    label: 'Fecha (año)',
+    min: 1900,
+    max: function() {
+      var date = new Date();
+
+      return date.getFullYear();
+    },
   },
   'works.$.place': {
     type: String,
@@ -119,22 +115,38 @@ ApplicationSchema = new SimpleSchema({
     type: String,
     label: 'Técnica',
   },
-
-  // Series
-  seriesTitle: {
+  'works.$.image': {
     type: String,
-    label: 'Título de la Serie',
+    optional: true, // To test before implementing upload
+    autoform: {
+      type: 'imageUpload',
+    },
   },
-
-  // TODO this field is causing validation problems
-  seriesDate: {
-    type: Date,
-    label: 'Fecha de la Serie',
+  'works.$.video': {
+    type: String,
+    label: 'Video (youtube o vimeo)',
     optional: true, // To test before implementing upload
   },
-  seriesType: {
+
+  // Project
+  projectTitle: {
     type: String,
-    label: 'Tipo',
+    label: 'Título del proyecto',
+  },
+  projectDate: {
+    type: Number,
+    label: 'Fecha del proyecto (año)',
+    min: 1900,
+    max: function() {
+      var date = new Date();
+
+      return date.getFullYear();
+    },
+
+  },
+  projectType: {
+    type: String,
+    label: 'Tipo de proyecto',
     allowedValues: [
       'foto',
       'audiovisual',
@@ -151,7 +163,7 @@ ApplicationSchema = new SimpleSchema({
       },
     },
   },
-  seriesDescription: {
+  projectDescription: {
     type: String,
     label: 'Descripción del proyecto',
     max: 1500,
@@ -160,7 +172,7 @@ ApplicationSchema = new SimpleSchema({
       rows: 10,
     },
   },
-  seriesLayout: {
+  projectLayout: {
     type: String,
     label: 'Croquis explicativo de montaje',
     optional: true, // To test before implementing upload
@@ -168,9 +180,18 @@ ApplicationSchema = new SimpleSchema({
       type: 'imageUpload',
     },
   },
-  seriesRequirements: {
+  projectRequirements: {
     type: String,
     label: 'Requerimientos especiales del montaje',
+    max: 1500,
+    autoform: {
+      type: 'textarea',
+      rows: 10,
+    },
+  },
+  projectComments: {
+    type: String,
+    label: 'Comentarios sobre el proyecto',
     max: 1500,
     autoform: {
       type: 'textarea',
@@ -194,6 +215,14 @@ ApplicationSchema = new SimpleSchema({
     optional: true, // To test before implementing upload
     autoform: {
       type: 'imageUpload',
+    },
+  },
+
+  acceptTerms: {
+    type: Boolean,
+    label: "Acepto los terminos y condiciones",
+    autoform: {
+      type: 'boolean-checkbox',
     },
   },
 

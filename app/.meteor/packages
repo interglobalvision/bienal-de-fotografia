@@ -29,6 +29,6 @@ spacebars
 check
 msavin:mongol
 alanning:roles
-materialize:materialize
 aldeed:autoform
-gildaspk:autoform-materialize
+poetic:materialize-scss
+poetic:autoform-materialize
