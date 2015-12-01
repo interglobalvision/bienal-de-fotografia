@@ -218,6 +218,14 @@ ApplicationSchema = new SimpleSchema({
     },
   },
 
+  acceptTerms: {
+    type: Boolean,
+    label: "Acepto los terminos y condiciones",
+    autoform: {
+      type: 'boolean-checkbox',
+    },
+  },
+
   // Hidden
   folioNumber: {
     type: Number,
