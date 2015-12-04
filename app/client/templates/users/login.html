@@ -1,18 +1,38 @@
 <template name="login">
   <div class="container">
-    <form>
-      <div class="control-group">
-        <label>Email</label>
-        <div class="controls"><input id="email" name="email" type="text" value="" /></div>
+    <div class="section">
+      <div class="row">
+        <div class="col s12">
+          <p>XVII Bienal de Fotografía<br />Centro de la Imagen<br />{{_ "fair-timescale"}}</p>
+          <h3>{{_ "login-header"}}</h3>
+          {{{_ "login-copy"}}}
+        </div>
       </div>
-      <div class="control-group">
-        <label>Password</label>
-        <div class="controls"><input id="password" type="password" value="" /></div>
+      <form>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" name="email" type="text" value="" />
+            <label class="active">Email</label>
+          </div>
+          <div class="input-field col s12">
+              <input id="password" type="password" value="" />
+              <label class="active">{{_ "password"}}</label>
+          </div>
+          <div class="form-actions">
+            <div class="col s12">
+              <input type="submit" class="waves-effect waves-light btn" value="{{_ 'login'}}" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="divider"></div>
+    <div class="section">
+      <div class="row">
+        <div class="col s12">
+          <a href="/forgot">{{_ "forgot_password"}}</a>
+        </div>
       </div>
-      <div class="form-actions">
-        <a href="/forgot">Forgot password?</a>
-        <input type="submit" class="button" value="Log In" />
-      </div>
-    </form>
+    </div>
   </div>
 </template>
