@@ -81,7 +81,7 @@ ApplicationSchema = new SimpleSchema({
   works: {
     type: [Object,],
     min: 1,
-    label: 'Obras',
+    label: 'Obra',
   },
   'works.$.title': {
     type: String,
