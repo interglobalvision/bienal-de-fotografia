@@ -22,6 +22,7 @@ Template.application.onRendered(function () {
 });
 
 Template.application.events({
+  // Save application
   'click .saveApplication': function(e) {
     e.preventDefault();
 
@@ -43,4 +44,15 @@ Template.application.events({
     });
 
   },
+
+  // Open modal with terms and conditions on click in the field label
+  'click #terms-field label': function(e) {
+     $('#terms-modal').openModal();
+  },
+
+  // Clear terms field is click on disagree
+  'click #disagree-btn': function(e) {
+    $('input[name="acceptTerms"]').prop('checked', false);
+  },
+  
 });

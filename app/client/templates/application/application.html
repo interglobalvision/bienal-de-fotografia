@@ -81,11 +81,22 @@
       </div>
     </div>
     <div class="divider"></div>
-    <div class="section">
+    <div class="section" id="terms-field">
       {{> afQuickField name='acceptTerms'}}
       <button id="submitApplication" type="submit" class="btn indigo darken-4 btn-primary">{{_ "application-review"}}</button>
     </div>
 
     {{/autoForm}}
+
+    <div id="terms-modal" class="modal">
+      <div class="modal-content">
+        <h4>{{_ "application-terms"}}</h4>
+        {{{_ "application-terms-text"}}} 
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="agree-btn" class="modal-action modal-close waves-effect waves-green btn-flat">Acepto</a>
+        <a href="#!" id="disagree-btn" class="modal-action modal-close waves-effect waves-green btn-flat">No acepto</a>
+      </div>
+    </div>
   </div>
 </template>
