@@ -32,9 +32,10 @@ $margin-large = ($gutter*5)
 
 // COLORS
 
-$color-black-soft = rgb(14,14,14)
+$color-black-soft = rgb(35,31,32)
 $color-white-soft = rgb(253,253,253)
 $color-blue = rgb(0,27,167)
+$color-blue-light = rgb(54,80,191)
 
 html
   background-color: $color-white-soft
@@ -44,6 +45,7 @@ html
 
 $font-size-basic = 19px
 $font-leading-basic = 1.4em
+$font-leading-btn = 2.2em
 
 $font-size-h1 = 40px
 $font-size-h2 = 30px
@@ -97,9 +99,12 @@ a,a:active,a:visited
 #insertApplicationForm .progress
   opacity: 0
   
-// Form 
-button.btn 
+// Form  
+.btn, .btn-default
+  line-height: $font-leading-btn
   background-color: $color-blue
+  &:hover
+    background-color: $color-blue-light
 
 // Image Upload
 .upload-form
