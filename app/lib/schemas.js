@@ -151,14 +151,16 @@ ApplicationSchema = new SimpleSchema({
       'foto',
       'audiovisual',
       '3d',
+      'otro',
     ],
     autoform: {
       type: 'select',
       options: function() {
         return {
           'foto': 'Foto',
-          'audiovisual' : 'Proyecto audiovisual/multimedia',
-          '3d': 'Instalación [3D]',
+          'audiovisual' : 'Proyecto audiovisual/multimedia/gif',
+          '3d': 'Instalación (3D)',
+          'otro': 'Otro',
         };
       },
     },
