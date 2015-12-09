@@ -10,7 +10,7 @@ Template.login.events = {
         Materialize.toast(error.reason, 3000);
         console.log(error);
       } else {
-        Router.go('/');
+        Router.go('/registro');
       }
     });
   },
