@@ -1,4 +1,5 @@
 AutoForm.setDefaultTemplate('materialize');
+AutoForm.setDefaultTemplateForType('afArrayField', 'igv_materialize');
 
 AutoForm.addInputType('imageUpload', {
   template: 'imageUpload',
