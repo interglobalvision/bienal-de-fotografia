@@ -168,7 +168,7 @@ ApplicationSchema = new SimpleSchema({
   projectDescription: {
     type: String,
     label: 'Descripción del proyecto',
-    max: 1500,
+    max: 2000,
     autoform: {
       type: 'textarea',
       rows: 10,
