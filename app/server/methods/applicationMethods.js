@@ -17,12 +17,39 @@ Meteor.methods({
   submitApplication: function(applicationId) {
     check(applicationId, String);
 
+    // Create update object
+    var applicationUpdate = {
+      status: 'submitted',
+    };
+
     var application = Applications.findOne(applicationId);
 
     if (Meteor.userId() !== application.userId) {
       throw new Meteor.Error('not-allowed', 'You must own this application to change it.');
     }
 
-    return Applications.update(applicationId, {$set: {status: 'submitted',},});
+    // Check if this application has a folio already
+    if( !application.hasOwnProperty('folio') ) {
+
+      // Get last application with highest folio
+      var lastApplicationWithFolio = Applications.findOne({}, {
+        sort: {
+          'folio': -1,
+        },
+        fields: {
+          'folio': true,
+        },
+      });
+
+      if( lastApplicationWithFolio.hasOwnProperty('folio') ) {
+        applicationUpdate['folio'] = lastApplicationWithFolio.folio + 1;
+      } else {
+        applicationUpdate['folio'] = 1;
+      }
+
+    }
+
+    return Applications.update(applicationId, {$set: applicationUpdate,});
   },
+
 });

@@ -199,6 +199,7 @@ ApplicationSchema = new SimpleSchema({
   projectComments: {
     type: String,
     label: 'Comentarios sobre el proyecto',
+    optional: true,
     max: 1500,
     autoform: {
       type: 'textarea',
@@ -227,6 +228,7 @@ ApplicationSchema = new SimpleSchema({
   acceptTerms: {
     type: Boolean,
     label: "Acepto los terminos y condiciones",
+    allowedValues: [true],
     autoform: {
       type: 'boolean-checkbox',
     },

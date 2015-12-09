@@ -89,7 +89,18 @@ Router.map(function() {
     },
   });
 
-  this.route('gracias');
+  this.route('gracias', {
+    path: '/gracias',
+    waitOn: function() {
+      return [   
+        Meteor.subscribe('singleApplication', Meteor.userId()),
+      ];
+    },
+
+    data: function() {
+      return Applications.findOne();
+    },
+  });
 
   // Users
 
