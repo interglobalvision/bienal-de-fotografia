@@ -5,13 +5,14 @@
     <div class="section">
       <div class="card">
         <div class="card-content">
-          <h4>Datos Personales</h4>
+          <h2>Datos Personales</h2>
           {{> afQuickField name='name'}}
           {{> afQuickField name='pseudonym'}}
           {{> afQuickField name='birthday'}}
           {{> afQuickField name='birthplace'}}
           {{> afQuickField name='nationality'}}
-          <h5>Dirección</h5>
+          {{> afQuickField name='age'}}
+          <h3>Dirección</h3>
           {{> afQuickField name='streetAndNumber'}}
           {{> afQuickField name='neighborhood'}}
           {{> afQuickField name='municipality'}}
@@ -47,7 +48,7 @@
     <div class="section">
       <div class="card">
         <div class="card-content">
-          <h4>Proyecto</h4>
+          <h2>Proyecto</h2>
           {{> afQuickField name='projectTitle'}}
           {{> afQuickField name='projectDate'}}
           {{> afQuickField name='projectType'}}
@@ -81,14 +82,14 @@
     <div class="divider"></div>
     <div class="section" id="terms-field">
       {{> afQuickField name='acceptTerms'}}
-      <button id="submitApplication" type="submit" class="btn indigo darken-4 btn-primary">{{_ "application-review"}}</button>
+      <button id="submitApplication" type="submit" class="btn btn-primary">{{_ "application-review"}}</button>
     </div>
 
     {{/autoForm}}
 
     <div id="terms-modal" class="modal">
       <div class="modal-content">
-        <h4>{{_ "application-terms"}}</h4>
+        <h2>{{_ "application-terms"}}</h2>
         {{{_ "application-terms-text"}}} 
       </div>
       <div class="modal-footer">

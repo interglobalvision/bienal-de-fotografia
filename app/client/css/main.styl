@@ -32,8 +32,10 @@ $margin-large = ($gutter*5)
 
 // COLORS
 
-$color-black-soft = rgb(14,14,14)
+$color-black-soft = rgb(35,31,32)
 $color-white-soft = rgb(253,253,253)
+$color-blue = rgb(0,27,167)
+$color-blue-light = rgb(54,80,191)
 
 html
   background-color: $color-white-soft
@@ -43,25 +45,33 @@ html
 
 $font-size-basic = 19px
 $font-leading-basic = 1.4em
+$font-leading-btn = 2.2em
 
 $font-size-h1 = 40px
 $font-size-h2 = 30px
 $font-size-h3 = 24px
 
 html
-  font-family: sans-serif
+  font-family: 'DIN-Light', Arial, 'Helvetica Neue', Helvetica, sans-serif
+  font-weight: 300
   font-size: $font-size-basic
   line-height: $font-leading-basic
 
   // HEADINGS
 
 h1
+  font-family: 'DIN-Bold', Arial, 'Helvetica Neue', Helvetica, sans-serif
+  font-weight: 600
   font-size: $font-size-h1
 
 h2
+  font-family: 'DIN-Medium', Arial, 'Helvetica Neue', Helvetica, sans-serif
+  font-weight: 500
   font-size: $font-size-h2
 
 h3
+  font-family: 'DIN-Medium', Arial, 'Helvetica Neue', Helvetica, sans-serif
+  font-weight: 500
   font-size: $font-size-h3
 
 h1,h2,h3,h4,h5,h6
@@ -75,10 +85,26 @@ a,a:active,a:visited
   transition:opacity .2s
   &:hover
     opacity:.5
+    
+// Header 
+.logo
+  margin-top: $margin-small
+  width: 60%
+  
+.nav 
+  background-color: $color-blue
+  color: $color-white-soft
 
 // ---- Application
 #insertApplicationForm .progress
   opacity: 0
+  
+// Form  
+.btn, .btn-default
+  line-height: $font-leading-btn
+  background-color: $color-blue
+  &:hover
+    background-color: $color-blue-light
 
 // Array field
 .array-section
@@ -97,3 +123,4 @@ a,a:active,a:visited
 
 .preloader-wrapper.active
   margin: 0 $margin-basic
+  
