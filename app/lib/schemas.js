@@ -124,6 +124,7 @@ ApplicationSchema = new SimpleSchema({
   },
   'works.$.image': {
     type: String,
+    label: 'Imagen',
     autoform: {
       type: 'imageUpload',
     },
