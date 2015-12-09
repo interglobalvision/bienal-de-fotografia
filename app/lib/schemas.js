@@ -29,17 +29,14 @@ ApplicationSchema = new SimpleSchema({
   streetAndNumber: {
     type: String,
     label: 'Calle y Numero',
-    optional: false,
   },
   neighborhood: {
     type: String,
     label: 'Colonia',
-    optional: false,
   },
   municipality: {
     type: String,
     label: 'Municipio',
-    optional: false,
   },
   state: {
     type: String,
@@ -127,7 +124,6 @@ ApplicationSchema = new SimpleSchema({
   },
   'works.$.image': {
     type: String,
-    optional: true, // To test before implementing upload
     autoform: {
       type: 'imageUpload',
     },
@@ -135,7 +131,7 @@ ApplicationSchema = new SimpleSchema({
   'works.$.video': {
     type: String,
     label: 'Video (youtube o vimeo)',
-    optional: true, // To test before implementing upload
+    optional: true,
   },
 
   // Project
@@ -187,7 +183,6 @@ ApplicationSchema = new SimpleSchema({
   projectLayout: {
     type: String,
     label: 'Croquis explicativo de montaje',
-    optional: true, // To test before implementing upload
     autoform: {
       type: 'imageUpload',
     },
@@ -224,7 +219,6 @@ ApplicationSchema = new SimpleSchema({
   identificationDocument: {
     type: String,
     label: 'Documento de identificación (IFE o documento probatorio)',
-    optional: true, // To test before implementing upload
     autoform: {
       type: 'imageUpload',
     },
