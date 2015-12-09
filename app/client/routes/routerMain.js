@@ -89,11 +89,17 @@ Router.map(function() {
     },
   });
 
+  this.route('gracias');
+
   // Users
 
-  this.route('login');
+  this.route('login', {
+    path: '/ingresar',
+  });
 
-  this.route('signup');
+  this.route('signup', {
+    path: '/registrarse',
+  });
 
   this.route('forgot');
 
