@@ -89,11 +89,28 @@ Router.map(function() {
     },
   });
 
+  this.route('gracias', {
+    path: '/gracias',
+    waitOn: function() {
+      return [   
+        Meteor.subscribe('singleApplication', Meteor.userId()),
+      ];
+    },
+
+    data: function() {
+      return Applications.findOne();
+    },
+  });
+
   // Users
 
-  this.route('login');
+  this.route('login', {
+    path: '/ingresar',
+  });
 
-  this.route('signup');
+  this.route('signup', {
+    path: '/registrarse',
+  });
 
   this.route('forgot');
 

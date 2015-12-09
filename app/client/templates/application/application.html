@@ -1,5 +1,6 @@
 <template name="application">
     <div class="container">
+      {{{ _"application-text" }}}
     {{#autoForm schema="ApplicationSchema" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" }}
     <div class="section">
       <div class="card">
@@ -7,6 +8,8 @@
           <h2>Datos Personales</h2>
           {{> afQuickField name='name'}}
           {{> afQuickField name='pseudonym'}}
+          {{> afQuickField name='birthday'}}
+          {{> afQuickField name='birthplace'}}
           {{> afQuickField name='nationality'}}
           {{> afQuickField name='age'}}
           <h3>Dirección</h3>
@@ -25,7 +28,7 @@
             <p>Párrafo de máximo 1,500 caracteres contando espacios y con la siguiente estructura:</p>
             <ol>
               <li>Nombre artístico.</li>
-              <li>Origen (país, estado y fecha de nacimiento).</li>
+              <li>Origen (población, estado o equivalente, país, y fecha de nacimiento).</li>
               <li>Estudios.</li>
               <li>Principales exposiciones (individuales y colectivas).</li>
               <li>Principales residencias.</li>
@@ -51,12 +54,12 @@
           {{> afQuickField name='projectType'}}
           {{> afQuickField name='projectDescription'}}
           <blockquote>
-            <p>Texto de máximo 1,500 caracteres, contando espacios. Deberá incluir:</p>
+            <p>Texto de máximo 2,000 caracteres, contando espacios. Deberá incluir:</p>
             <ol>
               <li><em>Statement</em> (explicación conceptual y técnica del proyecto)</li>
               <li>Problemas o retos que implicó su realización</li>
               <li>Motivos (¿Por qué considera relevante su realización?)</li>
-              <li>Referencias (históricas, visuales, filosóficas, artísticas, cotidianas, entre otras)</li>
+              <li>De ser necesario, referencias (históricas, visuales, filosóficas, artísticas, cotidianas, entre otras)</li>
             </ol>
           </blockquote>
           {{> afQuickField name='projectRequirements'}}
@@ -68,11 +71,7 @@
     <button type="submit" class="btn btn-default saveApplication">Guardar</button>
 
     <div class="section">
-      <div class="card">
-        <div class="card-content">
-          {{> afArrayField name='works'}}
-        </div>
-      </div>
+      {{> afArrayField name='works'}}
     </div>
 
     <div class="section">

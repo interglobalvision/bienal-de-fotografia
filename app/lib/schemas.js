@@ -12,29 +12,31 @@ ApplicationSchema = new SimpleSchema({
     label: 'Nombre artistico',
     optional: true,
   },
+  // As a string cuz using a Date field implies more work and it's only reference information
+  birthday: {
+    type: String,
+    label: 'Fecha de nacimiento (DD/MM/AAAA)',
+    min: 0,
+  },
+  birthplace: {
+    type: String,
+    label: 'Lugar de nacimiento (población,estado o equivalente y país)',
+  },
   nationality: {
     type: String,
     label: 'Nacionalidad',
   },
-  age: {
-    type: Number,
-    label: 'Edad',
-    min: 0,
-  },
   streetAndNumber: {
     type: String,
     label: 'Calle y Numero',
-    optional: false,
   },
   neighborhood: {
     type: String,
     label: 'Colonia',
-    optional: false,
   },
   municipality: {
     type: String,
     label: 'Municipio',
-    optional: false,
   },
   state: {
     type: String,
@@ -81,7 +83,7 @@ ApplicationSchema = new SimpleSchema({
   works: {
     type: [Object,],
     min: 1,
-    label: 'Obras',
+    label: 'Obra',
   },
   'works.$.title': {
     type: String,
@@ -111,13 +113,17 @@ ApplicationSchema = new SimpleSchema({
     type: Number,
     label: 'Alto (cm)',
   },
+  'works.$.depth': {
+    type: Number,
+    label: 'Profundidad (cm)',
+    optional: true,
+  },
   'works.$.medium': {
     type: String,
     label: 'Técnica',
   },
   'works.$.image': {
     type: String,
-    optional: true, // To test before implementing upload
     autoform: {
       type: 'imageUpload',
     },
@@ -125,7 +131,7 @@ ApplicationSchema = new SimpleSchema({
   'works.$.video': {
     type: String,
     label: 'Video (youtube o vimeo)',
-    optional: true, // To test before implementing upload
+    optional: true,
   },
 
   // Project
@@ -151,14 +157,16 @@ ApplicationSchema = new SimpleSchema({
       'foto',
       'audiovisual',
       '3d',
+      'otro',
     ],
     autoform: {
       type: 'select',
       options: function() {
         return {
           'foto': 'Foto',
-          'audiovisual' : 'Proyecto audiovisual/multimedia',
-          '3d': 'Instalación [3D]',
+          'audiovisual' : 'Proyecto audiovisual/multimedia/gif',
+          '3d': 'Instalación (3D)',
+          'otro': 'Otro',
         };
       },
     },
@@ -166,7 +174,7 @@ ApplicationSchema = new SimpleSchema({
   projectDescription: {
     type: String,
     label: 'Descripción del proyecto',
-    max: 1500,
+    max: 2000,
     autoform: {
       type: 'textarea',
       rows: 10,
@@ -175,7 +183,6 @@ ApplicationSchema = new SimpleSchema({
   projectLayout: {
     type: String,
     label: 'Croquis explicativo de montaje',
-    optional: true, // To test before implementing upload
     autoform: {
       type: 'imageUpload',
     },
@@ -192,6 +199,7 @@ ApplicationSchema = new SimpleSchema({
   projectComments: {
     type: String,
     label: 'Comentarios sobre el proyecto',
+    optional: true,
     max: 1500,
     autoform: {
       type: 'textarea',
@@ -212,7 +220,6 @@ ApplicationSchema = new SimpleSchema({
   identificationDocument: {
     type: String,
     label: 'Documento de identificación (IFE o documento probatorio)',
-    optional: true, // To test before implementing upload
     autoform: {
       type: 'imageUpload',
     },
@@ -221,6 +228,7 @@ ApplicationSchema = new SimpleSchema({
   acceptTerms: {
     type: Boolean,
     label: "Acepto los terminos y condiciones",
+    allowedValues: [true],
     autoform: {
       type: 'boolean-checkbox',
     },
