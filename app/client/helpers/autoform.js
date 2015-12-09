@@ -18,7 +18,7 @@ AutoForm.hooks({
           console.log(error);
           Materialize.toast(TAPi18n.__('alert-error'), 3000);
         } else {
-          Materialize.toast(TAPi18n.__('alert-application_saved'), 3000);
+          Materialize.toast(TAPi18n.__('alert-application_submitted'), 3000);
         }
       });
     },
