@@ -111,6 +111,11 @@ ApplicationSchema = new SimpleSchema({
     type: Number,
     label: 'Alto (cm)',
   },
+  'works.$.depth': {
+    type: Number,
+    label: 'Profundidad (cm)',
+    optional: true,
+  },
   'works.$.medium': {
     type: String,
     label: 'Técnica',
