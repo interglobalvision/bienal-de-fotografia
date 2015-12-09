@@ -12,14 +12,19 @@ ApplicationSchema = new SimpleSchema({
     label: 'Nombre artistico',
     optional: true,
   },
+  // As a string cuz using a Date field implies more work and it's only reference information
+  birthday: {
+    type: String,
+    label: 'Fecha de nacimiento (DD/MM/AAAA)',
+    min: 0,
+  },
+  birthplace: {
+    type: String,
+    label: 'Lugar de nacimiento (población,estado o equivalente y país)',
+  },
   nationality: {
     type: String,
     label: 'Nacionalidad',
-  },
-  age: {
-    type: Number,
-    label: 'Edad',
-    min: 0,
   },
   streetAndNumber: {
     type: String,
