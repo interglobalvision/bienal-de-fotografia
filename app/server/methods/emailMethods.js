@@ -32,6 +32,11 @@ Meteor.methods({
 
     check(userId, String);
 
+    // Prepend 0s
+    while(folio.length < 4 ) {
+      folio = "0" + folio;
+    }
+
     var user = Meteor.users.findOne(userId);
     var email = {
       address: user.emails[0].address,
