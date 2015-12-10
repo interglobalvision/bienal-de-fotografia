@@ -79,7 +79,7 @@ Router.map(function() {
     },
 
     waitOn: function() {
-      return [   
+      return [
         Meteor.subscribe('singleApplication', Meteor.userId()),
       ];
     },
@@ -92,7 +92,7 @@ Router.map(function() {
   this.route('gracias', {
     path: '/gracias',
     waitOn: function() {
-      return [   
+      return [
         Meteor.subscribe('singleApplication', Meteor.userId()),
       ];
     },
@@ -128,17 +128,6 @@ Router.map(function() {
       }
     },
 
-    waitOn: function() {
-      return [
-        Meteor.subscribe('items'),
-      ];
-    },
-
-    data: function() {
-      return {
-        items: Items.find(),
-      };
-    },
   });
 
 });
