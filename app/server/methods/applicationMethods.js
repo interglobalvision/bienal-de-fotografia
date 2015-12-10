@@ -53,8 +53,8 @@ Meteor.methods({
 
       // Send email
       Meteor.call('applicationSubmittedEmail', application.userId, applicationUpdate['folio'], function(error, response) {
-        if (error ) {
-          Materialize.toast(TAPi18n.__('alert-error'), 3000);
+        if (error) {
+          throw new Meteor.Error(500, 'Error 500: Error while sending email', 'Email not sent');
         }
       });
     }
