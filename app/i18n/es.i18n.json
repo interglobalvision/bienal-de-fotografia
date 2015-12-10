@@ -31,8 +31,8 @@
 
 // Login
   "login-header": "Ingresar",
-  "login-copy": "<p>Gracias por tu interés en participar en la XVII Bienal de Fotografía organizada por el Centro de la Imagen.</p>
-  <p>Por favor toma nota de que el proceso de registro concluye <strong>Viernes 18 de Septiembre del 2015</strong>. No se aceptará ninguna solicitud después de esta fecha.</p>",
+  "login-copy": "<p>Gracias por tu interés en participar en la XVII Bienal de Fotografía organizada por el Centro de la Imagen. Recuerda que puedes pausar y retomar tu solicitud conforme lo requieras.</p> 
+  <p>El proceso de registro concluye el día <b>13 de marzo de 2016 a las 23:59 horas</b>. No se aceptará ninguna solicitud posterior a la fecha y hora indicadas</p>",
 
 // Forgot
   "forgot-header": "¿Olvidaste tu contraseña?",
