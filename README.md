@@ -1,17 +1,11 @@
-# IGV Meteor Boil
+# El proceso de registro para participar en la XVII Bienal de Fotografía
 
-Starting point for our Meteor projects. Comes with some useful boiler for roles, user views, basic collections, routing and probably more...
+## HECHO EN MÉXICO
 
----
+### POR IGV
 
-### 3rd Party Packages
+#### Globie gonna get u
 
-- iron:router
-- momentjs:moment
-- tap:i18n
-- alanning:roles
-- msavin:mongol
+##### :)
 
----
-
-### Remember to edit gitignore to ignore settings.json after you clone!
+###### Made with Meteor
