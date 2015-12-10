@@ -1,10 +1,9 @@
 <template name="homepage">
   <div class="container">
     <p>Bienvenido al proceso de registro para participar en la XVII Bienal de Fotografía organizada por el Centro de la Imagen.</p>
-    {{#if isLoggedIn}}
     <a href="/registro" class="waves-effect waves-light btn">Reanudar tu registro</a>
-    {{else}}
+    {{#unless isLoggedIn}}
     <a href="/registrarse" class="waves-effect waves-light btn">Comenzar el registro</a>
-    {{/if}}
+    {{/unless}}
   </div>
 </template>
