@@ -1,13 +1,13 @@
 <template name="forgot">
   <div class="container">
     <form>
-      <h2>Forgot Password?</h2>
+      <h2>{{_ "forgot-header"}}</h2>
       <div class="control-group">
-        <label>Your Email</label>
+        <label>Email</label>
         <div class="controls"><input id="email" name="email" type="text" value="" /></div>
       </div>
       <div class="form-actions">
-        <input type="submit" class="waves-effect waves-light btn" value="Reset Password" />
+        <input type="submit" class="waves-effect waves-light btn" value="{{_ "forgot-submit"}}" />
       </div>
     </form>
   </div>
