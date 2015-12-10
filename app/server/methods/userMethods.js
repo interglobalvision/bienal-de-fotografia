@@ -8,5 +8,9 @@ Meteor.methods({
 
     // Create empty application for the user
     Applications.insert({userId: userId, status: 'saved',});
+
+    // Send enrollment email
+    Meteor.call('applicantEnrollmentEmail', userId);
+
   },
 });

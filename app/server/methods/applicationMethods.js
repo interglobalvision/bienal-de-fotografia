@@ -49,7 +49,15 @@ Meteor.methods({
 
     }
 
-    return Applications.update(applicationId, {$set: applicationUpdate,});
+    if ( Applications.update(applicationId, {$set: applicationUpdate,}) ) {
+
+      // Send email
+      Meteor.call('applicationSubmittedEmail', application.userId, applicationUpdate['folio'], function(error, response) {
+        if (error ) {
+          Materialize.toast(TAPi18n.__('alert-error'), 3000);
+        }
+      });
+    }
   },
 
 });
