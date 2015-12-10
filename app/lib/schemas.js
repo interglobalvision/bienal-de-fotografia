@@ -236,3 +236,7 @@ ApplicationSchema = new SimpleSchema({
   },
 
 });
+
+ApplicationSchema.messages({
+  "notAllowed acceptTerms": "Debes aceptar los Terminos y Condiciones",
+});
