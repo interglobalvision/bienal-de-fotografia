@@ -21,7 +21,7 @@ Meteor.methods({
     var email = {
       address: user.emails[0].address,
       subject: 'Cuenta creada exitosamente | XVII Bienal de Fotografía',
-      text: 'Gracias por comenzar el proceso de solicitud de la XVII Bienal de Fotografía .\n\nPuedes acceder a tu solicitud en: http://bienaldefotografia.mx/registro\nInicia sesión con el email: ' + user.emails[0].address + ' y la contraseña que elejiste.\n\nSi olvidaste tu contraseña puedes restablecerla en: http://bienaldefotografia.mx/restablecer-contrasena',
+      text: 'Gracias por comenzar el proceso de solicitud de la XVII Bienal de Fotografía .\n\nPuedes acceder a tu solicitud en: http://bienaldefotografia.mx/registro\nInicia sesión con el email: ' + user.emails[0].address + ' y la contraseña que elegiste.\n\nSi olvidaste tu contraseña puedes restablecerla en: http://bienaldefotografia.mx/restablecer-contrasena',
     };
 
     Meteor.call('sendMail', email);
