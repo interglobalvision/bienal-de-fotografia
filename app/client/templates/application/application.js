@@ -50,6 +50,11 @@ Template.application.events({
      $('#terms-modal').openModal();
   },
 
+  // Sets terms to true if click con accept
+  'click #agree-btn': function(e) {
+    $('input[name="acceptTerms"]').prop('checked', true);
+  },
+
   // Clear terms field is click on disagree
   'click #disagree-btn': function(e) {
     $('input[name="acceptTerms"]').prop('checked', false);
