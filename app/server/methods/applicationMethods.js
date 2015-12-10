@@ -49,7 +49,15 @@ Meteor.methods({
 
     }
 
-    return Applications.update(applicationId, {$set: applicationUpdate,});
+    if ( Applications.update(applicationId, {$set: applicationUpdate,}) ) {
+
+      // Send email
+      Meteor.call('applicationSubmittedEmail', application.userId, applicationUpdate['folio'], function(error, response) {
+        if (error) {
+          throw new Meteor.Error(500, 'Error 500: Error while sending email', 'Email not sent');
+        }
+      });
+    }
   },
 
 });
