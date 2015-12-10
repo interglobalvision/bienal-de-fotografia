@@ -36,7 +36,7 @@ ApplicationSchema = new SimpleSchema({
   },
   municipality: {
     type: String,
-    label: 'Municipio',
+    label: 'Delegación o Municipio',
   },
   state: {
     type: String,
@@ -54,7 +54,7 @@ ApplicationSchema = new SimpleSchema({
   },
   telephone: {
     type: String,
-    label: 'Telefono / Fax',
+    label: 'Telefono / Fax (lada incluido)',
     min: 10,
     autoform: {
       placeholder: '(123) 456 7890', 
@@ -71,7 +71,7 @@ ApplicationSchema = new SimpleSchema({
   },
   otherPhone: {
     type: String,
-    label: 'Otro telefono',
+    label: 'Otro telefono (lada incluido)',
     optional: true,
     min: 10,
     autoform: {
