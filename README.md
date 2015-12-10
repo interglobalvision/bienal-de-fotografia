@@ -1,6 +1,6 @@
 # El proceso de registro para participar en la XVII Bienal de Fotografía
 
-## HECHO EN MÉXICO
+## BIEN HECHO EN MÉXICO
 
 ### POR IGV
 
