@@ -20,7 +20,6 @@ var filters = {
 
   isLoggedIn: function() {
     if (!(Meteor.loggingIn() || Meteor.user())) {
-      alert('Please Log In First.');
       Router.go('login');
     }
 

@@ -77,18 +77,15 @@ h3
 h1,h2,h3,h4,h5,h6
   line-height: $font-leading-basic
 
-  // LINKS
+    
+// LINKS
 
 a,a:active,a:visited
-  color:inherit
   text-decoration: none
   transition:opacity .2s
   &:hover
     opacity:.5
-    
-p a,p a:active,p a:visited
-  text-decoration: underline
-    
+
 // Header 
 .logo
   margin-top: $margin-small
@@ -97,6 +94,10 @@ p a,p a:active,p a:visited
 .nav 
   background-color: $color-blue
   color: $color-white-soft
+
+#header
+  a,a:active,a:visited
+    color: $color-white-soft
 
 // ---- Application
 #insertApplicationForm .progress
