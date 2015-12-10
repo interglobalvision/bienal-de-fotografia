@@ -23,6 +23,7 @@ var filters = {
       alert('Please Log In First.');
       Router.go('login');
     }
+
     this.next();
   },
 
@@ -56,18 +57,10 @@ Router.map(function() {
           Router.go('/gracias');
         }
 
-        /*
-        if (moment().isAfter(Meteor.settings.public.applicationDeadline)) {
-
-          // Check if after deadline
-          if (userApplication.extend !== true || moment().isAfter(Meteor.settings.public.applicationExtension)) {
-
+        // Check if after deadline
+        if (moment().utc().isAfter(Meteor.settings.public.applicationDeadline)) {
           Router.go('/application-closed');
-
-          }
-
         }
-        */
 
         this.next();
 
@@ -79,7 +72,7 @@ Router.map(function() {
     },
 
     waitOn: function() {
-      return [   
+      return [
         Meteor.subscribe('singleApplication', Meteor.userId()),
       ];
     },
@@ -92,7 +85,7 @@ Router.map(function() {
   this.route('gracias', {
     path: '/gracias',
     waitOn: function() {
-      return [   
+      return [
         Meteor.subscribe('singleApplication', Meteor.userId()),
       ];
     },
