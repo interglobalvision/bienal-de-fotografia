@@ -104,7 +104,9 @@ Router.map(function() {
     path: '/registrarse',
   });
 
-  this.route('forgot');
+  this.route('forgot', {
+    path: '/restablecer-contrasena',
+  });
 
   // Boiler admin
 

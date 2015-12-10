@@ -10,7 +10,7 @@ Template.forgot.events = {
       if (error) {
         console.log(error);
       } else {
-        Router.go('/login');
+        Router.go('/ingresar');
 
       }
     });
