@@ -3,7 +3,6 @@ Meteor.methods({
   sendMail: function(email) {
     this.unblock();
 
-    console.log(email);
     Email.send({
       to: email.address,
       from: Meteor.settings.email_from,
