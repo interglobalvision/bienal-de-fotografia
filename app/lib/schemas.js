@@ -91,14 +91,8 @@ ApplicationSchema = new SimpleSchema({
     optional: true,
   },
   'works.$.date': {
-    type: Number,
+    type: String,
     label: 'Fecha (año)',
-    min: 1900,
-    max: function() {
-      var date = new Date();
-
-      return date.getFullYear();
-    },
   },
   'works.$.place': {
     type: String,
@@ -106,16 +100,16 @@ ApplicationSchema = new SimpleSchema({
     optional: true,
   },
   'works.$.width': {
-    type: Number,
-    label: 'Ancho (cm)',
+    type: String,
+    label: 'Ancho',
   },
   'works.$.height': {
-    type: Number,
-    label: 'Alto (cm)',
+    type: String,
+    label: 'Alto',
   },
   'works.$.depth': {
-    type: Number,
-    label: 'Profundidad (cm)',
+    type: String,
+    label: 'Profundidad',
     optional: true,
   },
   'works.$.medium': {
@@ -141,15 +135,8 @@ ApplicationSchema = new SimpleSchema({
     label: 'Título del proyecto',
   },
   projectDate: {
-    type: Number,
+    type: String,
     label: 'Fecha del proyecto (año)',
-    min: 1900,
-    max: function() {
-      var date = new Date();
-
-      return date.getFullYear();
-    },
-
   },
   projectType: {
     type: String,
