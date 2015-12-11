@@ -1,34 +1,11 @@
 // STRUCUTRE
 
-  // GRID BUILDER
-
-$cols = 8
-$col = 80px
 $gutter = 16px
-.container
-  margin: 0 auto
-  width: ($col * $cols)+($gutter * $cols)
-.row
-  clear: both
-.col
-  float: left
-  margin-left: ($gutter/2)
-  margin-right: ($gutter/2)
-for col in 1..$cols
-  .col{col}
-    width: ( col * $col ) + ( ( col - 1 ) * $gutter )
-
-    // FLUID RESPONSIVE CONTAINER STYLE IF NO GRID
-
-// .container
-//   max-width: 700px
-//   width: 90%
-//   margin: 0 auto
-
 $margin-tiny = ($gutter/2)
 $margin-small = ($gutter)
 $margin-basic = ($gutter*2)
 $margin-large = ($gutter*5)
+
 
 // COLORS
 
@@ -41,15 +18,22 @@ html
   background-color: $color-white-soft
   color: $color-black-soft
 
+
 // TYPOGRAPHY
 
 $font-size-basic = 19px
+$font-size-mobile = 16px
+
 $font-leading-basic = 1.4em
 $font-leading-btn = 2.2em
 
-$font-size-h1 = 40px
-$font-size-h2 = 30px
-$font-size-h3 = 24px
+$font-size-h1 = $font-size-basic * 2.105263158
+$font-size-h2 = $font-size-basic * 1.578947368
+$font-size-h3 = $font-size-basic * 1.263157895
+
+$font-size-h1-mobile = $font-size-mobile * 2.105263158
+$font-size-h2-mobile = $font-size-mobile * 1.578947368
+$font-size-h3-mobile = $font-size-mobile * 1.263157895
 
 html
   font-family: 'DIN', Arial, 'Helvetica Neue', Helvetica, sans-serif
@@ -57,27 +41,25 @@ html
   font-size: $font-size-basic
   line-height: $font-leading-basic
 
-  // HEADINGS
+
+// HEADINGS
 
 h1
-  font-family: 'DIN', Arial, 'Helvetica Neue', Helvetica, sans-serif
   font-weight: 600
   font-size: $font-size-h1
 
 h2
-  font-family: 'DIN', Arial, 'Helvetica Neue', Helvetica, sans-serif
   font-weight: 500
   font-size: $font-size-h2
 
 h3
-  font-family: 'DIN', Arial, 'Helvetica Neue', Helvetica, sans-serif
   font-weight: 500
   font-size: $font-size-h3
 
 h1,h2,h3,h4,h5,h6
   line-height: $font-leading-basic
 
-    
+
 // LINKS
 
 a,a:active,a:visited
@@ -86,14 +68,17 @@ a,a:active,a:visited
   &:hover
     opacity:.5
 
-// Header 
-.logo
+// Header
+
+#logo
   margin-top: $margin-small
   width: 60%
-  
-.nav 
+
+#nav
   background-color: $color-blue
   color: $color-white-soft
+  box-sizing: border-box
+  padding: $margin-small
 
 #header
   a,a:active,a:visited
@@ -107,21 +92,25 @@ a,a:active,a:visited
     color: $color-blue
 
 
-// ---- Application
+// Application
+
 #insertApplicationForm .progress
   opacity: 0
-  
-// Form  
+
+
+// Form
 .btn, .btn-default
   line-height: $font-leading-btn
   background-color: $color-blue
   &:hover
     background-color: $color-blue-light
 
+
 // Array field
 .array-section
   .btn-floating
     text-align: center
+
 
 // Image Upload
 .upload-form
@@ -135,4 +124,22 @@ a,a:active,a:visited
 
 .preloader-wrapper.active
   margin: 0 $margin-basic
-  
+
+
+@media all and (max-width: 600px)
+
+  html
+    font-size: $font-size-mobile
+
+  h1
+    font-size: $font-size-h1-mobile
+
+  h2
+    font-size: $font-size-h2-mobile
+
+  h3
+    font-size: $font-size-h3-mobile
+
+  #logo
+    margin-top: $margin-small
+    width: 40%
