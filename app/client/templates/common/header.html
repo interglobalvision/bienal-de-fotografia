@@ -1,11 +1,11 @@
 <template name="header">
   <header id="header" class="container">
     <div class="row">
-      <div class="col col4">
-        <img class="logo" src="images/logo-XVIIBF.png" />
+      <div class="col m6 s12">
+        <img id="logo" src="images/logo-XVIIBF.png" />
       </div>
-      <div class="col col4 nav">
-        <ul>
+      <div class="col m6 s12">
+        <ul id="nav">
           <li><a href="{{pathFor 'homepage'}}"><span class="genericon genericon-home"></span></a></li>
           <li><a href="http://centrodelaimagen.conaculta.gob.mx/convocatorias/2016/bienaldefotografia.html" target="_blank">Convocatoria</a></li>
           {{#if isLoggedIn}}
@@ -17,12 +17,5 @@
         </ul>
       </div>
     </div>
-<!--
-    <div class="messages">
-      {{#each messages}}
-        <p class="message message-{{type}}">{{message}}</p>
-      {{/each}}
-    </div>
--->
   </header>
 </template>
