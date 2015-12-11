@@ -3,6 +3,7 @@ Meteor.methods({
   sendMail: function(email) {
     this.unblock();
 
+    console.log(email);
     Email.send({
       to: email.address,
       from: Meteor.settings.email_from,
@@ -31,6 +32,9 @@ Meteor.methods({
     this.unblock();
 
     check(userId, String);
+
+    // Coverts the folio to string
+    folio = folio.toString();
 
     // Prepend 0s
     while(folio.length < 4 ) {
