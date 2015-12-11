@@ -9,7 +9,10 @@ Meteor.methods({
 
     var application = Applications.findOne(applicationId);
 
-    // TODO: Check for falsy values like in MAF?
+    // Clean null / falsy values
+    if ( applicationUpdate.hasOwnProperty('$set') && applicationUpdate.$set.hasOwnProperty('works') ) {
+      applicationUpdate.$set.works = _.compact(applicationUpdate.$set.works);
+    }
 
     return Applications.update(application._id, applicationUpdate);
   },
