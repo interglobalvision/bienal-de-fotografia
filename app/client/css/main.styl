@@ -140,6 +140,30 @@ a,a:active,a:visited
   h3
     font-size: $font-size-h3-mobile
 
+  $gutter = 10px
+  $margin-tiny = ($gutter/2)
+  $margin-small = ($gutter)
+  $margin-basic = ($gutter*2)
+  $margin-large = ($gutter*5)
+
   #logo
     margin-top: $margin-small
     width: 40%
+
+  #nav
+    padding: $margin-small
+
+  #footer
+    margin-top: $margin-basic
+    padding: $margin-tiny $margin-small
+
+
+  // Image Upload
+  .upload-form
+    margin: $margin-basic 0 $margin-small
+
+  .image-upload-thumbnail
+    margin-bottom: $margin-tiny
+
+  .preloader-wrapper.active
+    margin: 0 $margin-basic
