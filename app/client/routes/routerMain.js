@@ -124,5 +124,31 @@ Router.map(function() {
 
   });
 
+  this.route('submissions', {
+    path: '/solicitudes',
+    onBeforeAction: function() {
+      var userId = Meteor.userId();
+
+      if (Roles.userIsInRole(userId, 'admin')) {
+        this.next();
+      } else if (Roles.userIsInRole(userId, 'applicant')) {
+        Router.go('/');
+      }
+    },
+
+    waitOn: function() {
+      return [
+        Meteor.subscribe('allApplications'),
+      ];
+    },
+
+    data: function() {
+      return {
+        saved: Applications.find({status: 'saved',}),
+        submitted: Applications.find({status: 'submitted',}),
+      };
+    },
+  });
+
 });
 

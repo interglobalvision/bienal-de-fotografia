@@ -1,0 +1,30 @@
+<template name="submissions">
+  <div class="container">
+    <table class="striped js-sortable" data-sortlist="[[2,1]]">
+      <thead>
+        <tr>
+            <th data-field="name">{{_ "submissions-name"}}</th>
+            <th data-field="project">{{_ "submissions-projectTitle"}}</th>
+            <th data-field="status">{{_ "submissions-status"}}</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each submitted}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{projectTitle}}</td>
+          <td>{{status}}</td>
+        </tr>
+        {{/each}}
+        {{#each saved}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{projectTitle}}</td>
+          <td>{{status}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>

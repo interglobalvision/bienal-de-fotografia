@@ -13,6 +13,7 @@ $color-black-soft = rgb(35,31,32)
 $color-white-soft = rgb(253,253,253)
 $color-blue = rgb(0,27,167)
 $color-blue-light = rgb(54,80,191)
+$color-grey = rgb(158,158,158)
 
 html
   background-color: $color-white-soft
@@ -124,6 +125,21 @@ a,a:active,a:visited
 
 .preloader-wrapper.active
   margin: 0 $margin-basic
+  
+// Tables
+th.tablesorter-header
+  cursor: pointer
+  &:focus
+    outline: 0
+  
+.tablesorter-headerDesc
+  color: $color-grey
+  
+.tablesorter-headerAsc
+  color: $color-blue
+  
+th.sorter-false
+  cursor: default
 
 
 @media all and (max-width: 600px)
