@@ -71,8 +71,6 @@
   "extend-deadline": "Extender fecha de límite",
 
 // Submissions
-  "status": "Estatus",
-	"submissions": "Solicitudes",
 	"submissions-submitted": "Enviadas",
 	"submissions-signed": "Firmadas",
 	"submissions-paid": "Pagadas",
@@ -84,6 +82,8 @@
 
   "submissions-image": "Imagen",
   "submissions-name": "Nombre",
+  "submissions-status": "Estatus",
+  "submissions-projectTitle": "Título del proyecto",
   "submissions-location": "Ubicación",
   "submissions-contact": "Contacto",
   "submissions-history": "Historia",
