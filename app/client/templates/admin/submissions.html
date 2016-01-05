@@ -10,16 +10,9 @@
       </thead>
 
       <tbody>
-        {{#each submitted}}
+        {{#each applications}}
         <tr>
-          <td>{{name}}</td>
-          <td>{{projectTitle}}</td>
-          <td>{{status}}</td>
-        </tr>
-        {{/each}}
-        {{#each saved}}
-        <tr>
-          <td>{{name}}</td>
+          <td><a href="/solicitudes/{{userId}}">{{name}}</a></td>
           <td>{{projectTitle}}</td>
           <td>{{status}}</td>
         </tr>
