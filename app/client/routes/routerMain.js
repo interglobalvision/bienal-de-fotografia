@@ -129,9 +129,9 @@ Router.map(function() {
     onBeforeAction: function() {
       var userId = Meteor.userId();
 
-      if (Roles.userIsInRole(userId, 'admin')) {
+      if (Roles.userIsInRole(userId, 'admin') || Roles.userIsInRole(userId, 'committee')) {
         this.next();
-      } else if (Roles.userIsInRole(userId, 'applicant')) {
+      } else {
         Router.go('/');
       }
     },
@@ -144,8 +144,34 @@ Router.map(function() {
 
     data: function() {
       return {
-        saved: Applications.find({status: 'saved',}),
-        submitted: Applications.find({status: 'submitted',}),
+        applications: Applications.find(),
+      };
+    },
+  });
+
+  this.route('submissionReview', {
+    
+    onBeforeAction: function() {
+      var userId = Meteor.userId();
+
+      if (Roles.userIsInRole(userId, 'admin') || Roles.userIsInRole(userId, 'committee')) {
+        this.next();
+      } else {
+        Router.go('/');
+      }
+    },
+
+    path: '/solicitudes/:userId',
+
+    waitOn: function() {
+      return [
+        Meteor.subscribe('singleApplication', this.params.userId),
+      ];
+    },
+
+    data: function() {
+      return {
+        application: Applications.findOne({userId: this.params.userId,}),
       };
     },
   });
