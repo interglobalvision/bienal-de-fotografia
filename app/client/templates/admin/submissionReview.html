@@ -1,0 +1,36 @@
+<template name="submissionReview">
+  <div class="container">
+{{#with application}}
+  <div class="section">
+    <div class="card">
+      <div class="card-content">
+        <h2>Datos Personales</h2>
+
+        <ul>
+          <li><strong>{{_ "submissions-name"}}:</strong>&emsp;{{name}}</li>
+          <li><strong>{{_ "submissions-pseudonym"}}:</strong>&emsp;{{pseudonym}}</li>
+          <li><strong>{{_ "submissions-birthday"}}:</strong>&emsp;{{birthday}}</li>
+          <li><strong>{{_ "submissions-birthplace"}}:</strong>&emsp;{{birthplace}}</li>
+          <li><strong>{{_ "submissions-nationality"}}:</strong>&emsp;{{nationality}}</li>
+        </ul>
+
+        <h3>Dirección</h3>
+
+        <ul>
+          <li><strong>{{_ "submissions-streetAndNumber"}}:</strong>&emsp;{{streetAndNumber}}</li>
+          <li><strong>{{_ "submissions-neighborhood"}}:</strong>&emsp;{{neighborhood}}</li>
+          <li><strong>{{_ "submissions-municipality"}}:</strong>&emsp;{{municipality}}</li>
+          <li><strong>{{_ "submissions-state"}}:</strong>&emsp;{{state}}</li>
+          <li><strong>{{_ "submissions-zip"}}:</strong>&emsp;{{zip}}</li>
+          <li><strong>{{_ "submissions-telephone"}}:</strong>&emsp;{{telephone}}</li>
+          <li><strong>{{_ "submissions-cellphone"}}:</strong>&emsp;{{cellphone}}</li>
+          <li><strong>{{_ "submissions-otherPhone"}}:</strong>&emsp;{{otherPhone}}</li>
+          <li><strong>{{_ "submissions-identificationDocument"}}:</strong><br><img src="{{identificationDocument}}"></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+{{/with}}
+  </div>
+</template>
