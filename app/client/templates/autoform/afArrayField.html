@@ -1,6 +1,6 @@
 <template name="afArrayField_igv_materialize">
    <div class="array-section">
-     <h5 class="u-inline-block">Obras</h5>
+     <h5 class="u-inline-block">{{_ "application.works.label"}}</h5>
      <p>Incluir en esta sección todas las imágenes/obras/piezas que participarán en la bienal y su respectiva información. Para agregar más favor de dar click en el botón <b>añadir obra</b>.</p>
      {{#if afFieldIsInvalid name=this.atts.name}}
      <div class="has-error">
@@ -19,7 +19,7 @@
        {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
        <div class="divider"></div>
        <li class="list-group-item section">
-         <a type="a" class="btn waves-effect autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">{{_ "application-add"}} {{#with afFieldLabelText name=this.atts.name}}{{this}}{{/with}}</a>
+         <a type="a" class="btn waves-effect autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">{{_ "application.add"}} {{#with afFieldLabelText name=this.atts.name}}{{this}}{{/with}}</a>
        </li>
        {{/if}}
      </ul>

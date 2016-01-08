@@ -1,6 +1,6 @@
 <template name="application">
     <div class="container">
-      {{{ _"application-text" }}}
+      {{{ _"application.text" }}}
     {{#autoForm schema="ApplicationSchema" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" }}
     <div class="section">
       <div class="card">
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <button type="submit" class="btn btn-default saveApplication">Guardar</button>
+    <button type="submit" class="btn btn-default saveApplication">{{_ "application.save"}}</button>
 
     <div class="section">
       <div class="card">
@@ -70,12 +70,12 @@
         </div>
       </div>
     </div>
-    <button type="submit" class="btn btn-default saveApplication">Guardar</button>
+    <button type="submit" class="btn btn-default saveApplication">{{_ "application.save"}}</button>
 
     <div class="section">
       {{> afArrayField name='works'}}
     </div>
-    <button type="submit" class="btn btn-default saveApplication">Guardar</button>
+    <button type="submit" class="btn btn-default saveApplication">{{_ "application.save"}}</button>
 
     <div class="section">
       <div class="progress">
@@ -85,15 +85,15 @@
     <div class="divider"></div>
     <div class="section" id="terms-field">
       {{> afQuickField name='acceptTerms'}}
-      <button id="submitApplication" type="submit" class="btn btn-primary">{{_ "application-review"}}</button>
+      <button id="submitApplication" type="submit" class="btn btn-primary">{{_ "application.review"}}</button>
     </div>
 
     {{/autoForm}}
 
     <div id="terms-modal" class="modal">
       <div class="modal-content">
-        <h2>{{_ "application-terms"}}</h2>
-        {{{_ "application-terms-text"}}} 
+        <h2>{{_ "application.terms"}}</h2>
+        {{{_ "application.termsText"}}} 
       </div>
       <div class="modal-footer">
         <a href="#!" id="agree-btn" class="modal-action modal-close waves-effect waves-green btn-flat">Acepto</a>
