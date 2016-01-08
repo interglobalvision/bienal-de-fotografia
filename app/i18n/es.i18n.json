@@ -97,6 +97,25 @@
 // Application
   "application": {
     "label": "Solucitud",
+    "title": "Registro para solicitantes",
+    "text": "<p>Gracias por tu interés en participar en la XVII Bienal de Fotografía organizada por el Centro de la  Imagen. Por favor llena el formulario situado al final de este texto para empezar tu registro. Puedes pausar y retomar tu solicitud conforme lo requieras.</p>
+    <p>El proceso de registro concluye el día <b>13 de marzo de 2016 a las 23:59 horas</b>. No se aceptará ninguna solicitud posterior a la fecha y hora indicadas. A partir de ese momento tampoco se podrá completar ningún formulario.</p>
+    <p>Cada solicitud será cuidadosamente revisada, considerada y analizada por el jurado de la Bienal. La publicación de resultados  de seleccionados se hará a través de la página del <a href='http://centrodelaimagen.conaculta.gob.mx' target='_blank'>Centro de la Imagen</a> el<b> lunes 4 de abril de 2016 a las 14:00 horas.</b></p>
+    <p>Puedes consultar la convocatoria <a href='http://centrodelaimagen.conaculta.gob.mx/convocatorias/2016/bienaldefotografia.html' target='_blank'>aquí</a>.</p>",
+    "terms": "TERMINOS Y CONDICIONES DE PARTICIPACIÓN",
+    "termsText": "<ol>
+    <li>El Centro de la Imagen no se hace responsable por el contenido de los materiales entregados.</li>
+    <li>El Centro de la Imagen tiene derecho a publicar en medios impresosy/o electrónicos las imágenes entregadas con fines de difusión de la Bienal.</li>
+    <li>El área de Publicaciones del Centro de la Imagen puede hacer correcciones o modificaciones a la semblanza curricular y la descripción de la obra siguiendo el manual de estilo de la institución sin consultarlas con los participantes.</li>
+    </ol>",
+    "review": "Guardar y continuar con el siguiente paso",
+    "save": "Guardar",
+    "reviewSign": "Revisar y Firmar",
+    "thanks": "<h2>Gracias por inscribirte al proceso de selección de la XVII Bienal de Fotografía.</h2>
+      <p>Tu solicitud ha sido procesada exitosamente y se le asignó el folio número: <b>%s</b></p>
+      <p>Cada solicitud será cuidadosamente revisada, considerada y analizada por el jurado de la Bienal. La publicación de resultados de seleccionados se hará a través de la página del Centro de la Imagen el lunes 4 de abril de 2016 a las 14:00 horas.</p>",
+    "edit": "Editar",
+    "add": "Añadir",
     "status": "Estatus",
     "personalData": "Datos Personal",
     "name": {
@@ -146,7 +165,7 @@
       "label":  "Documento de identificación (IFE o documento probatorio)"
     },
     "works": {
-      "label": "Obra",
+      "label": "Obras",
       "$": {
         "title": {
           "label":  "Título"
@@ -185,7 +204,13 @@
       "label":  "Fecha del proyecto (año)"
     },
     "projectType": {
-      "label":  "Tipo de proyecto"
+      "label":  "Tipo de proyecto",
+      "options": {
+        "foto": "Foto",
+        "audiovisual": "Proyecto audiovisual/multimedia/gif",
+        "3d": "Instalación (3D)",
+        "otro": "Otro"
+      }
     },
     "projectDescription": {
       "label":  "Descripción del proyecto"
@@ -199,36 +224,7 @@
     "projectComments": {
       "label":  "Comentarios sobre el proyecto"
     }
-  },
-  "application-title": "Registro para solicitantes",
-  "application-text": "<p>Gracias por tu interés en participar en la XVII Bienal de Fotografía organizada por el Centro de la  Imagen. Por favor llena el formulario situado al final de este texto para empezar tu registro. Puedes pausar y retomar tu solicitud conforme lo requieras.</p>
-  <p>El proceso de registro concluye el día <b>13 de marzo de 2016 a las 23:59 horas</b>. No se aceptará ninguna solicitud posterior a la fecha y hora indicadas. A partir de ese momento tampoco se podrá completar ningún formulario.</p>
-  <p>Cada solicitud será cuidadosamente revisada, considerada y analizada por el jurado de la Bienal. La publicación de resultados  de seleccionados se hará a través de la página del <a href='http://centrodelaimagen.conaculta.gob.mx' target='_blank'>Centro de la Imagen</a> el<b> lunes 4 de abril de 2016 a las 14:00 horas.</b></p>
-  <p>Puedes consultar la convocatoria <a href='http://centrodelaimagen.conaculta.gob.mx/convocatorias/2016/bienaldefotografia.html' target='_blank'>aquí</a>.</p>",
-
-
-  "application-review": "Guardar y continuar con el siguiente paso",
-  "application-save": "Guardar",
-
-  "application-review_sign": "Revisar y Firmar",
-  "application-edit": "Editar",
-
-  "application-add": "Añadir",
-  
-  "application-closed": "<h2>El periodo para mandar tu solicitud para Material Art Fair 2016 ha cerrado. 😞</h2>
-    <p class='flow-text'>Agradecemos tu interés en la tercera edición de la feria, la cual se llevará a cabo del 4 al 7 de febrero, 2016 en Expo Reforma, Ciudad de México.</p>
-    <p class='flow-text'>Si deseas más información, no dudes en escribirnos a <a href='mailto:applications@material-fair.com' class='u-inline-block'>applications@material-fair.com</a>.</p>",
-
-  "application-terms": "TERMINOS Y CONDICIONES DE PARTICIPACIÓN",
-  "application-terms-text": "<ol>
-  <li>El Centro de la Imagen no se hace responsable por el contenido de los materiales entregados.</li>
-  <li>El Centro de la Imagen tiene derecho a publicar en medios impresosy/o electrónicos las imágenes entregadas con fines de difusión de la Bienal.</li>
-  <li>El área de Publicaciones del Centro de la Imagen puede hacer correcciones o modificaciones a la semblanza curricular y la descripción de la obra siguiendo el manual de estilo de la institución sin consultarlas con los participantes.</li>
-  </ol>",
-
-  "application-thanks": "<h2>Gracias por inscribirte al proceso de selección de la XVII Bienal de Fotografía.</h2>
-    <p>Tu solicitud ha sido procesada exitosamente y se le asignó el folio número: <b>%s</b></p>
-    <p>Cada solicitud será cuidadosamente revisada, considerada y analizada por el jurado de la Bienal. La publicación de resultados de seleccionados se hará a través de la página del Centro de la Imagen el lunes 4 de abril de 2016 a las 14:00 horas.</p>"
+  }
 }
 
 // "with-variables": "Hey, %s! You have received %s new messages today."
