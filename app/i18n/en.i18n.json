@@ -1,6 +1,234 @@
 {
-  "menu-contentpage": "Content Page",
-  "menu-items": "Items"
+  "sign_up": "Registrar",
+  "login": "Ingresar",
+  "logout": "Cerrar Sesión",
+  "password": "Contraseña",
+  "forgot_password": "¿Olvidaste tu contraseña?",
+  "browser-warning": "Para una mejor experiencia utiliza un explorador actualizado como Chrome, Firefox o Safari",
+  "load-file": "Cargar archivo",
+
+// Alerts
+  "alert-error": "Error",
+  "alert-invalid_input": "Entrada invalida",
+  "alert-application_saved": "Solicitud guardada",
+  "alert-application_submitted": "Solicitud enviada",
+  "alert-upload_success": "Carga existosa",
+  "alert-reset_sent": "Link  para recuperar la contraseña enviado",
+  "alert-login": "Has iniciado sesión",
+  "alert-please_fill": "Por favor llena todos los campos",
+  "alert-signup_admin": "Bienvenido al panel de administración",
+  "alert-signup_applicant-thanks": "Gracias por registrarte",
+  "alert-signup_applicant-please": "Por favor completa la solicitud",
+  "alert-enroll_sent": "Se ha enviado la cuenta por correo electronico",
+
+// Signup
+  "sign_up-header": "Registro",
+  "sign_up-copy": "<p>Gracias por tu interés en participar en la XVII Bienal de Fotografía organizada por el Centro de la  Imagen. Recuerda que puedes pausar y retomar tu solicitud conforme lo requieras.</p>
+  <p>El proceso de registro concluye el día <b>13 de marzo de 2016 a las 23:59 horas</b>. No se aceptará ninguna solicitud posterior a la fecha y hora indicadas. A partir de ese momento tampoco se podrá completar ningún formulario. Cada solicitud será cuidadosamente revisada, considerada y analizada por el jurado de la Bienal. La publicación de resultados  de seleccionados se hará a través de la página del <a href='http://centrodelaimagen.conaculta.gob.mx' target='_blank'>Centro de la Imagen</a> el<b> lunes 4 de abril de 2016 a las 14:00 horas.</b></p>
+  <p>Cada solicitud será cuidadosamente revisada, considerada y analizada por el jurado de la Bienal. La publicación de resultados  de seleccionados se hará a través de la página del Centro de la Imagen el lunes 4 de abril de 2016 a las 14:00 horas.</p>
+  <p>Puedes consultar la convocatoria <a href='http://centrodelaimagen.conaculta.gob.mx/convocatorias/2016/bienaldefotografia.html' taget='_blank'>aquí</a>.</p>",
+
+// Login
+  "login-header": "Ingresar",
+  "login-copy": "<p>Gracias por tu interés en participar en la XVII Bienal de Fotografía organizada por el Centro de la Imagen. Recuerda que puedes pausar y retomar tu solicitud conforme lo requieras.</p> 
+  <p>El proceso de registro concluye el día <b>13 de marzo de 2016 a las 23:59 horas</b>. No se aceptará ninguna solicitud posterior a la fecha y hora indicadas</p>",
+
+// Forgot
+  "forgot-header": "¿Olvidaste tu contraseña?",
+  "forgot-submit": "Enviar nueva contraseña",
+
+// Homepage
+  "homepage-copy": "<p class='flow-text'>Bienvenidos a la solicitud en línea de la XVII Bienal de Fotografía organizada por el Centro de la Imagen.</p>",
+
+// Welcome
+  "welcome": "Por favor haz click en “registrar” para empezar una nueva solicitud o haz click en “ingresar” para seguir trabajando en una solicitud existente.",
+
+// Footer
+  "footer-text": "<p>En caso de cualquier problema, error o duda por favor escribe al correo <a href='mailto:17bienalfotografia@gmail.com'>17bienalfotografia@gmail.com</a></p>",
+// Dashboard
+  "dashboard": "Dashboard",
+  "dashboard-application_status": "Estatus de solicitud",
+  "dashboard-application_status-all": "Todas",
+  "dashboard-application_status-submitted": "Enviadas",
+  "dashboard-application_status-signed": "Firmadas",
+  "dashboard-application_status-paid": "Pagadas",
+  "dashboard-application_status-approved": "Aprobadas",
+  "dashboard-admin_users": "Administradores",
+  "dashboard-committee_users": "Miembros del Comité",
+  "dashboard-remove_user": "Eliminar Usuario",
+  "dashboard-add_user": "Añadir nuevo usuario",
+  "dashboard-add_user-name": "Nombre",
+  "dashboard-add_user-admin": "Administrador",
+  "dashboard-add_user-committee": "Comité",
+  "dashboard-add_user-create": "Crear Usuario",
+
+// Users
+  "users": "Usuarios",
+  "contact-email": "Email de Contacto",
+  "user-email": "Email de Usuario",
+  "extend": "Extender",
+  "undextend": "Desextender",
+  "extend-deadline": "Extender fecha de límite",
+
+// Submissions
+  "submissions-submitted": "Enviadas",
+  "submissions-signed": "Firmadas",
+  "submissions-paid": "Pagadas",
+  "submissions-approved": "Aceptadas",
+  "submissions-for-consideration": "En consideración",
+  "submissions-already-rated": "Calificadas",
+  "submissions-average-rating": "Calificación promedio",
+  "submissions-your-rating": "Tu calificación",
+
+  "submissions-image": "Imagen",
+  "submissions-name": "Nombre",
+  "submissions-projectTitle": "Título del proyecto",
+  "submissions-location": "Ubicación",
+  "submissions-contact": "Contacto",
+  "submissions-history": "Historia",
+  "submissions-proposal": "Propuesta",
+  "submissions-booth": "Stand",
+  "submissions-artists": "Artistas",
+  "submissions-mark-paid": "Marcar como Pagado",
+  "submissions-waitlist": "Waitlist",
+  "submissions-approve": "Aprobar",
+  "submissions-remove": "Eliminar",
+
+// Application
+  "application": {
+    "label": "Solucitud",
+    "title": "Registro para solicitantes",
+    "text": "<p>Gracias por tu interés en participar en la XVII Bienal de Fotografía organizada por el Centro de la  Imagen. Por favor llena el formulario situado al final de este texto para empezar tu registro. Puedes pausar y retomar tu solicitud conforme lo requieras.</p>
+    <p>El proceso de registro concluye el día <b>13 de marzo de 2016 a las 23:59 horas</b>. No se aceptará ninguna solicitud posterior a la fecha y hora indicadas. A partir de ese momento tampoco se podrá completar ningún formulario.</p>
+    <p>Cada solicitud será cuidadosamente revisada, considerada y analizada por el jurado de la Bienal. La publicación de resultados  de seleccionados se hará a través de la página del <a href='http://centrodelaimagen.conaculta.gob.mx' target='_blank'>Centro de la Imagen</a> el<b> lunes 4 de abril de 2016 a las 14:00 horas.</b></p>
+    <p>Puedes consultar la convocatoria <a href='http://centrodelaimagen.conaculta.gob.mx/convocatorias/2016/bienaldefotografia.html' target='_blank'>aquí</a>.</p>",
+    "terms": "TERMINOS Y CONDICIONES DE PARTICIPACIÓN",
+    "termsText": "<ol>
+    <li>El Centro de la Imagen no se hace responsable por el contenido de los materiales entregados.</li>
+    <li>El Centro de la Imagen tiene derecho a publicar en medios impresosy/o electrónicos las imágenes entregadas con fines de difusión de la Bienal.</li>
+    <li>El área de Publicaciones del Centro de la Imagen puede hacer correcciones o modificaciones a la semblanza curricular y la descripción de la obra siguiendo el manual de estilo de la institución sin consultarlas con los participantes.</li>
+    </ol>",
+    "review": "Guardar y continuar con el siguiente paso",
+    "save": "Guardar",
+    "reviewSign": "Revisar y Firmar",
+    "thanks": "<h2>Gracias por inscribirte al proceso de selección de la XVII Bienal de Fotografía.</h2>
+      <p>Tu solicitud ha sido procesada exitosamente y se le asignó el folio número: <b>%s</b></p>
+      <p>Cada solicitud será cuidadosamente revisada, considerada y analizada por el jurado de la Bienal. La publicación de resultados de seleccionados se hará a través de la página del Centro de la Imagen el lunes 4 de abril de 2016 a las 14:00 horas.</p>",
+    "edit": "Editar",
+    "add": "Añadir",
+    "status": "Estatus",
+    "personalData": "Datos Personal",
+    "name": {
+      "label":  "Nombre completo"
+    },
+    "pseudonym": {
+      "label":  "Nombre artistico"
+    },
+    "birthday": {
+      "label":  "Fecha de nacimiento (DD/MM/AAAA)"
+    },
+    "birthplace": {
+      "label":  "Lugar de nacimiento (población,estado o equivalente y país)"
+    },
+    "nationality": {
+      "label":  "Nacionalidad"
+    },
+    "address": "Dirección",
+    "streetAndNumber": {
+      "label":  "Calle y Numero"
+    },
+    "neighborhood": {
+      "label":  "Colonia"
+    },
+    "municipality": {
+      "label":  "Delegación o Municipio"
+    },
+    "state": {
+      "label":  "Estado"
+    },
+    "zip": {
+      "label":  "C.P."
+    },
+    "telephone": {
+      "label":  "Telefono / Fax (lada incluido)"
+    },
+    "cellphone": {
+      "label":  "Celular"
+    },
+    "otherPhone": {
+      "label":  "Otro telefono (lada incluido)"
+    },
+    "cv": {
+      "label":  "CV"
+    },
+    "identificationDocument": {
+      "label":  "Documento de identificación (IFE o documento probatorio)"
+    },
+    "works": {
+      "label": "Obra",
+      "$": {
+        "title": {
+          "label":  "Título"
+        },
+        "date": {
+          "label":  "Fecha (año)"
+        },
+        "place": {
+          "label":  "Lugar"
+        },
+        "width": {
+          "label":  "Ancho"
+        },
+        "height": {
+          "label":  "Alto"
+        },
+        "depth": {
+          "label":  "Profundidad"
+        },
+        "medium": {
+          "label":  "Técnica"
+        },
+        "image": {
+          "label":  "Imagen"
+        },
+        "video": {
+          "label":  "Video (youtube o vimeo)"
+        }
+      }
+    },
+    "project": "Proyecto",
+    "projectTitle": {
+      "label":  "Título del proyecto"
+    },
+    "projectDate": {
+      "label":  "Fecha del proyecto (año)"
+    },
+    "projectType": {
+      "label":  "Tipo de proyecto",
+      "options": {
+        "foto": "Foto",
+        "audiovisual": "Proyecto audiovisual/multimedia/gif",
+        "3d": "Instalación (3D)",
+        "otro": "Otro"
+      }
+    },
+    "projectDescription": {
+      "label":  "Descripción del proyecto"
+    },
+    "projectLayout": {
+      "label":  "Croquis explicativo de montaje"
+    },
+    "projectRequirements": {
+      "label":  "Requerimientos especiales del montaje"
+    },
+    "projectComments": {
+      "label":  "Comentarios sobre el proyecto"
+    }
+  },
+  
+  "application-closed": "<h2>El periodo para mandar tu solicitud para Material Art Fair 2016 ha cerrado. 😞</h2>
+    <p class='flow-text'>Agradecemos tu interés en la tercera edición de la feria, la cual se llevará a cabo del 4 al 7 de febrero, 2016 en Expo Reforma, Ciudad de México.</p>
+    <p class='flow-text'>Si deseas más información, no dudes en escribirnos a <a href='mailto:applications@material-fair.com' class='u-inline-block'>applications@material-fair.com</a>.</p>"
 }
 
 // "with-variables": "Hey, %s! You have received %s new messages today."
