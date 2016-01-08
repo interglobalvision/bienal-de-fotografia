@@ -108,21 +108,4 @@ Router.map(function() {
     path: '/restablecer-contrasena',
   });
 
-  // Boiler admin
-
-  this.route('admin', {
-    path: '/admin',
-    onBeforeAction: function() {
-      var userId = Meteor.userId();
-
-      if (Roles.userIsInRole(userId, 'admin')) {
-        this.next();
-      } else {
-        Router.go('/');
-      }
-    },
-
-  });
-
 });
-

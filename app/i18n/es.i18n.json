@@ -71,8 +71,6 @@
   "extend-deadline": "Extender fecha de límite",
 
 // Submissions
-  "status": "Estatus",
-	"submissions": "Solicitudes",
 	"submissions-submitted": "Enviadas",
 	"submissions-signed": "Firmadas",
 	"submissions-paid": "Pagadas",
@@ -84,6 +82,7 @@
 
   "submissions-image": "Imagen",
   "submissions-name": "Nombre",
+  "submissions-projectTitle": "Título del proyecto",
   "submissions-location": "Ubicación",
   "submissions-contact": "Contacto",
   "submissions-history": "Historia",
@@ -96,7 +95,111 @@
   "submissions-remove": "Eliminar",
 
 // Application
-  "application": "Solicitud",
+  "application": {
+    "label": "Solucitud",
+    "status": "Estatus",
+    "personalData": "Datos Personal",
+    "name": {
+      "label":  "Nombre completo"
+    },
+    "pseudonym": {
+      "label":  "Nombre artistico"
+    },
+    "birthday": {
+      "label":  "Fecha de nacimiento (DD/MM/AAAA)"
+    },
+    "birthplace": {
+      "label":  "Lugar de nacimiento (población,estado o equivalente y país)"
+    },
+    "nationality": {
+      "label":  "Nacionalidad"
+    },
+    "address": "Dirección",
+    "streetAndNumber": {
+      "label":  "Calle y Numero"
+    },
+    "neighborhood": {
+      "label":  "Colonia"
+    },
+    "municipality": {
+      "label":  "Delegación o Municipio"
+    },
+    "state": {
+      "label":  "Estado"
+    },
+    "zip": {
+      "label":  "C.P."
+    },
+    "telephone": {
+      "label":  "Telefono / Fax (lada incluido)"
+    },
+    "cellphone": {
+      "label":  "Celular"
+    },
+    "otherPhone": {
+      "label":  "Otro telefono (lada incluido)"
+    },
+    "cv": {
+      "label":  "CV"
+    },
+    "identificationDocument": {
+      "label":  "Documento de identificación (IFE o documento probatorio)"
+    },
+    "works": {
+      "label": "Obra",
+      "$": {
+        "title": {
+          "label":  "Título"
+        },
+        "date": {
+          "label":  "Fecha (año)"
+        },
+        "place": {
+          "label":  "Lugar"
+        },
+        "width": {
+          "label":  "Ancho"
+        },
+        "height": {
+          "label":  "Alto"
+        },
+        "depth": {
+          "label":  "Profundidad"
+        },
+        "medium": {
+          "label":  "Técnica"
+        },
+        "image": {
+          "label":  "Imagen"
+        },
+        "video": {
+          "label":  "Video (youtube o vimeo)"
+        }
+      }
+    },
+    "project": "Proyecto",
+    "projectTitle": {
+      "label":  "Título del proyecto"
+    },
+    "projectDate": {
+      "label":  "Fecha del proyecto (año)"
+    },
+    "projectType": {
+      "label":  "Tipo de proyecto"
+    },
+    "projectDescription": {
+      "label":  "Descripción del proyecto"
+    },
+    "projectLayout": {
+      "label":  "Croquis explicativo de montaje"
+    },
+    "projectRequirements": {
+      "label":  "Requerimientos especiales del montaje"
+    },
+    "projectComments": {
+      "label":  "Comentarios sobre el proyecto"
+    }
+  },
   "application-title": "Registro para solicitantes",
   "application-text": "<p>Gracias por tu interés en participar en la XVII Bienal de Fotografía organizada por el Centro de la  Imagen. Por favor llena el formulario situado al final de este texto para empezar tu registro. Puedes pausar y retomar tu solicitud conforme lo requieras.</p>
   <p>El proceso de registro concluye el día <b>13 de marzo de 2016 a las 23:59 horas</b>. No se aceptará ninguna solicitud posterior a la fecha y hora indicadas. A partir de ese momento tampoco se podrá completar ningún formulario.</p>

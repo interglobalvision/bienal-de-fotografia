@@ -1,0 +1,23 @@
+<template name="submissions">
+  <div class="container">
+    <table class="striped js-sortable" data-sortlist="[[2,1]]">
+      <thead>
+        <tr>
+            <th data-field="name">{{_ "application.name.label"}}</th>
+            <th data-field="project">{{_ "application.projectTitle.label"}}</th>
+            <th data-field="status">{{_ "application.status"}}</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each applications}}
+        <tr>
+          <td><a href="/solicitudes/{{userId}}">{{name}}</a></td>
+          <td>{{projectTitle}}</td>
+          <td>{{status}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>

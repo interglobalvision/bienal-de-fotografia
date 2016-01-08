@@ -1,0 +1,63 @@
+<template name="submissionReview">
+  <div class="container">
+{{#with application}}
+  <div class="section">
+    <div class="card">
+      <div class="card-content">
+        <h2>{{_ "application.personalData"}}</h2>
+
+        <ul>
+          <li><strong>{{_ "application.name.label"}}:</strong><p>{{name}}</p></li>
+          <li><strong>{{_ "application.pseudonym.label"}}:</strong><p>{{pseudonym}}</p></li>
+          <li><strong>{{_ "application.birthday.label"}}:</strong><p>{{birthday}}</p></li>
+          <li><strong>{{_ "application.birthplace.label"}}:</strong><p>{{birthplace}}</p></li>
+          <li><strong>{{_ "application.nationality.label"}}:</strong><p>{{nationality}}</p></li>
+          <li><strong>{{_ "application.cv.label"}}:</strong><p>{{cv}}</p></li>
+          <li><strong>{{_ "application.identificationDocument.label"}}:</strong><p><img src="{{identificationDocument}}"></p></li>
+        </ul>
+
+        <h3>{{_ "application.address"}}</h3>
+
+        <ul>
+          <li><strong>{{_ "application.streetAndNumber.label"}}:</strong><p>{{streetAndNumber}}</p></li>
+          <li><strong>{{_ "application.neighborhood.label"}}:</strong><p>{{neighborhood}}</p></li>
+          <li><strong>{{_ "application.municipality.label"}}:</strong><p>{{municipality}}</p></li>
+          <li><strong>{{_ "application.state.label"}}:</strong><p>{{state}}</p></li>
+          <li><strong>{{_ "application.zip.label"}}:</strong><p>{{zip}}</p></li>
+          <li><strong>{{_ "application.telephone.label"}}:</strong><p>{{telephone}}</p></li>
+          <li><strong>{{_ "application.cellphone.label"}}:</strong><p>{{cellphone}}</p></li>
+          <li><strong>{{_ "application.otherPhone.label"}}:</strong><p>{{otherPhone}}</p></li>
+        </ul>
+
+        <h2>{{_ "application.project"}}</h2>
+        <ul>
+          <li><strong>{{_ "application.projectTitle.label"}}:</strong><p>{{projectTitle}}</p></li>
+          <li><strong>{{_ "application.projectDate.label"}}:</strong><p>{{projectDate}}</p></li>
+          <li><strong>{{_ "application.projectType.label"}}:</strong><p>{{projectType}}</p></li>
+          <li><strong>{{_ "application.projectDescription.label"}}:</strong><p>{{projectDescription}}</p></li>
+          <li><strong>{{_ "application.projectRequirements.label"}}:</strong><p>{{projectRequirements}}</p></li>
+          <li><strong>{{_ "application.projectComments.label"}}:</strong><p>{{projectComments}}</p></li>
+          <li><strong>{{_ "application.projectLayout.label"}}:</strong><p><img src="{{projectLayout}}"></p></li>
+        </ul>
+
+        <h2>{{_ "application.works.label"}}</h2>
+        {{#each works}}
+        <ul>
+          <li><strong>{{_ "application.works.$.title.label"}}:</strong><p>{{title}}</p></li>
+          <li><strong>{{_ "application.works.$.date.label"}}:</strong><p>{{date}}</p></li>
+          <li><strong>{{_ "application.works.$.place.label"}}:</strong><p>{{place}}</p></li>
+          <li><strong>{{_ "application.works.$.width.label"}}:</strong><p>{{width}}</p></li>
+          <li><strong>{{_ "application.works.$.height.label"}}:</strong><p>{{height}}</p></li>
+          <li><strong>{{_ "application.works.$.depth.label"}}:</strong><p>{{depth}}</p></li>
+          <li><strong>{{_ "application.works.$.medium.label"}}:</strong><p>{{medium}}</p></li>
+          <li><strong>{{_ "application.works.$.image.label"}}:</strong><p><img src="{{image}}"></p></li>
+          <li><strong>{{_ "application.works.$.video.label"}}:</strong><p><a href="{{video}}">{{video}}</a></p></li>
+        </ul>
+        {{/each}}
+
+      </div>
+    </div>
+  </div>
+{{/with}}
+  </div>
+</template>
