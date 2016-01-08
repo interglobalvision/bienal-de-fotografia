@@ -24,6 +24,18 @@
     "Router",
     "Handlebars",
     "TAPi18n",
-    "getUserLanguage"
+    "getUserLanguage",
+    "Applications",
+    "SimpleSchema",
+    "ApplicationSchema",
+    "Estados",
+    "Slingshot",
+    "Random",
+    "AutoForm",
+    "Materialize",
+    "Roles",
+    "moment",
+    "Email",
+    "check"
   ]
 }
