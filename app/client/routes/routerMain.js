@@ -63,8 +63,8 @@ Router.map(function() {
 
         this.next();
 
-      } else if (Roles.userIsInRole(userId, 'committee') && !Roles.userIsInRole(userId, 'admin')) {
-        Router.go('/registros');
+      } else if (Roles.userIsInRole(userId, 'committee')) {
+        Router.go('/solicitudes');
       } else if (Roles.userIsInRole(userId, 'admin')) {
         Router.go('/admin');
       }
