@@ -17,3 +17,8 @@ Meteor.publish('singleApplication', function(userId) {
 Meteor.publish('allApplications', function(userId) {
   return Applications.find();
 });
+
+// Publish users
+Meteor.publish('allUsers', function (){
+  return Meteor.users.find();
+});
