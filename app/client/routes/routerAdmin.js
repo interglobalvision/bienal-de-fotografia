@@ -14,6 +14,19 @@ Router.map(function() {
       }
     },
 
+    waitOn: function() {
+      return [
+        Meteor.subscribe('allUsers'),
+      ];
+    },
+
+    data: function() {
+      return {
+        adminUsers: Roles.getUsersInRole('admin'),
+        committeeUsers: Roles.getUsersInRole('committee'),
+      };
+    },
+
   });
 
   this.route('submissions', {
