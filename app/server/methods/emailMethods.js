@@ -51,4 +51,10 @@ Meteor.methods({
     Meteor.call('sendMail', email);
   },
 
+  adminEnrollmentEmail: function(userId) {
+    check(userId, String);
+    Accounts.sendEnrollmentEmail(userId);
+    return 'success';
+  },
+
 });
