@@ -29,3 +29,13 @@ Handlebars.registerHelper('isCommittee', function() {
     return false;
   }
 });
+
+Handlebars.registerHelper('isCommitteeOrAdmin', function() {
+  var userId = Meteor.userId();
+
+  if (Roles.userIsInRole(userId, 'committee') || Roles.userIsInRole(userId, 'admin')) {
+    return true;
+  } else {
+    return false;
+  }
+});
