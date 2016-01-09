@@ -22,35 +22,26 @@ Template.admin.events({
 
     if (!user.email || !role || !user.username) {
       Materialize.toast(TAPi18n.__('alert-please_fill'), 3000);
-    } else {
-      Meteor.call('adminCreateUser', user, function(error, result) {
+    } else if (role === 'admin') {
+      Meteor.call('createAdminUser', user, function(error, result) {
         if (error) {
           Materialize.toast(TAPi18n.__('alert-error'), 2000);
           Materialize.toast(error.reason, 3000);
         } else {
-          var userId = result;
-
-          Meteor.call('createUserRoles', userId, role, function(error, result) {
-            if (error) {
-              Materialize.toast(TAPi18n.__('alert-error'), 2000);
-              Materialize.toast(error.reason, 3000);
-            } else {
-              Meteor.call('adminEnrollmentEmail', userId, function(error, result) {
-                if (error) {
-                  Materialize.toast(TAPi18n.__('alert-error'), 2000);
-                  Materialize.toast(error.reason, 3000);
-                } else {
-                  Materialize.toast(TAPi18n.__('alert-enroll_sent'), 2000);
-                  console.log(result);
-
-                  // Clean form
-                  $('#email').val('');
-                  $('#username').val('');
-                  $('input[name="role"]:checked').prop( "checked", false );
-                }
-              });
-            }
-          });
+          $('#email').val('');
+          $('#username').val('');
+          $('input[name="role"]:checked').prop('checked', false);
+        }
+      });
+    } else if (role === 'committee') {
+      Meteor.call('createCommitteeUser', user, function(error, result) {
+        if (error) {
+          Materialize.toast(TAPi18n.__('alert-error'), 2000);
+          Materialize.toast(error.reason, 3000);
+        } else {
+          $('#email').val('');
+          $('#username').val('');
+          $('input[name="role"]:checked').prop('checked', false);
         }
       });
     }

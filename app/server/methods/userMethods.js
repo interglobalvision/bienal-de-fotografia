@@ -2,7 +2,7 @@ Meteor.methods({
 
   setupApplicant: function(userId) {
     check(userId, String);
-    
+
     // Setup Applicant Role
     Roles.addUsersToRoles(userId, ['applicant',]);
 
@@ -14,44 +14,66 @@ Meteor.methods({
 
   },
 
+  // not sure we use or need this after all?
   createUserRoles: function(userId, role) {
     check(userId, String);
+    check(role, String);
 
-    var result;
-
-    if ((role === 'committee' || role === 'admin') && Roles.userIsInRole(Meteor.userId(), ['admin',])) {
-      Roles.addUsersToRoles(userId, [role,]);
-      result = role;
-    } 
-
-    return result;
-  },
-
-  adminCreateUser: function(user) {
-//     check(userId, String);
-
-    var result;
-
-    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
-      result = Accounts.createUser(user);
-    } else {
-      result = false;
+    if ((role !== 'committee' && role !== 'admin')) {
+      throw new Meteor.Error('bad-request', 'No valid role.');
     }
 
-    return result;
+    if (!Roles.userIsInRole(this.userId, ['admin',])) {
+      throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error');
+    }
+
+    return Roles.addUsersToRoles(userId, [role,]);
+  },
+
+  createAdminUser: function(user) {
+    // sets a schema and checks against it. Throws Meteor error on match fail. Email RegEx is pretty forgiving though
+    var userCheck = new SimpleSchema({
+      username: { type: String, },
+      email: { type: String, regEx: SimpleSchema.RegEx.Email, }
+    });
+    check(user, userCheck);
+
+    if (!Roles.userIsInRole(this.userId, ['admin',])) {
+      throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error');
+    }
+
+    var userId = Accounts.createUser(user);
+
+    Roles.addUsersToRoles(userId, ['admin',]);
+
+    return Meteor.call('adminEnrollmentEmail', userId);
+  },
+
+  createCommitteeUser: function(user) {
+    var userCheck = new SimpleSchema({
+      username: { type: String, },
+      email: { type: String, regEx: SimpleSchema.RegEx.Email, }
+    });
+    check(user, userCheck);
+
+    if (!Roles.userIsInRole(this.userId, ['admin',])) {
+      throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error');
+    }
+
+    var userId = Accounts.createUser(user);
+
+    Roles.addUsersToRoles(userId, ['committee',]);
+
+    return Meteor.call('adminEnrollmentEmail', userId);
   },
 
   removeUser: function(userId) {
     check(userId, String);
 
-    var result;
-
-    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
-      result = Meteor.users.remove({_id: userId,});
-    } else {
-      result = false;
+    if (!Roles.userIsInRole(this.userId, ['admin',])) {
+      throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error');
     }
 
-    return result;
+    return Meteor.users.remove({_id: userId,});
   },
 });
