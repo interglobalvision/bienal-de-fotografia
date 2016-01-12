@@ -5,7 +5,6 @@
         <tr>
             <th data-field="name">{{_ "application.name.label"}}</th>
             <th data-field="project">{{_ "application.projectTitle.label"}}</th>
-            <th data-field="image">{{_ "application.works.$.image.label"}}</th>
             <th data-field="status">{{_ "application.status"}}</th>
         </tr>
       </thead>
@@ -25,11 +24,6 @@
           <td>
             {{#if projectTitle}}
               {{projectTitle}}
-            {{/if}}
-          </td>
-          <td>
-            {{#if works.[0].image}}
-              <img src="{{works.[0].image}}" width="50"/>
             {{/if}}
           </td>
           <td>
