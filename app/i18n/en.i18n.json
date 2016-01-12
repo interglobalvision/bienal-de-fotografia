@@ -119,6 +119,7 @@
     "edit": "Editar",
     "add": "Añadir",
     "status": "Estatus",
+    "noName": "(sin nombre)",
     "personalData": "Datos Personal",
     "name": {
       "label":  "Nombre completo"

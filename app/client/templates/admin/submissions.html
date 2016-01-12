@@ -1,10 +1,11 @@
 <template name="submissions">
   <div class="container">
-    <table class="striped js-sortable" data-sortlist="[[2,1]]">
+    <table class="striped js-sortable" data-sortlist="[[3,1]]">
       <thead>
         <tr>
             <th data-field="name">{{_ "application.name.label"}}</th>
             <th data-field="project">{{_ "application.projectTitle.label"}}</th>
+            <th data-field="image">{{_ "application.works.$.image.label"}}</th>
             <th data-field="status">{{_ "application.status"}}</th>
         </tr>
       </thead>
@@ -12,9 +13,28 @@
       <tbody>
         {{#each applications}}
         <tr>
-          <td><a href="/admin/solicitudes/{{userId}}">{{name}}</a></td>
-          <td>{{projectTitle}}</td>
-          <td>{{status}}</td>
+          <td>
+            <a href="/admin/solicitudes/{{userId}}">
+            {{#if name}}
+              {{name}}
+            {{else}}
+              {{_ "application.noName"}}
+            {{/if}}
+            </a>
+          </td>
+          <td>
+            {{#if projectTitle}}
+              {{projectTitle}}
+            {{/if}}
+          </td>
+          <td>
+            {{#if works.[0].image}}
+              <img src="{{works.[0].image}}" width="50"/>
+            {{/if}}
+          </td>
+          <td>
+            {{status}}
+          </td>
         </tr>
         {{/each}}
       </tbody>
