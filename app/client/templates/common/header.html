@@ -9,6 +9,9 @@
           <li><a href="{{pathFor 'homepage'}}"><span class="genericon genericon-home"></span></a></li>
           <li><a href="http://centrodelaimagen.conaculta.gob.mx/convocatorias/2016/bienaldefotografia.html" target="_blank">Convocatoria</a></li>
           {{#if isLoggedIn}}
+            {{#if isAdmin}}
+              <li><a href="{{pathFor 'admin'}}">Admin</a></li>
+            {{/if}}
             {{#if isCommitteeOrAdmin}}
               <li><a href="{{pathFor 'submissions'}}">Solicitudes</a></li>
             {{/if}}
