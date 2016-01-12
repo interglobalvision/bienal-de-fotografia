@@ -30,7 +30,7 @@ Meteor.methods({
     return Roles.addUsersToRoles(userId, [role,]);
   },
 
-  createAdminUser: function(user) {
+  adminCreateUser: function(user, role) {
     // sets a schema and checks against it. Throws Meteor error on match fail. Email RegEx is pretty forgiving though
     var userCheck = new SimpleSchema({
       username: {type: String,},
@@ -45,26 +45,7 @@ Meteor.methods({
 
     var userId = Accounts.createUser(user);
 
-    Roles.addUsersToRoles(userId, ['admin',]);
-
-    return Meteor.call('adminEnrollmentEmail', userId);
-  },
-
-  createCommitteeUser: function(user) {
-    var userCheck = new SimpleSchema({
-      username: {type: String,},
-      email: {type: String, regEx: SimpleSchema.RegEx.Email,},
-    });
-
-    check(user, userCheck);
-
-    if (!Roles.userIsInRole(this.userId, ['admin',])) {
-      throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error');
-    }
-
-    var userId = Accounts.createUser(user);
-
-    Roles.addUsersToRoles(userId, ['committee',]);
+    Roles.addUsersToRoles(userId, [role,]);
 
     return Meteor.call('adminEnrollmentEmail', userId);
   },
