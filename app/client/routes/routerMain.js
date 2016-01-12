@@ -64,7 +64,7 @@ Router.map(function() {
         this.next();
 
       } else if (Roles.userIsInRole(userId, 'committee')) {
-        Router.go('/solicitudes');
+        Router.go('/admin/solicitudes');
       } else if (Roles.userIsInRole(userId, 'admin')) {
         Router.go('/admin');
       }
