@@ -9,6 +9,8 @@ Router.map(function() {
 
       if (Roles.userIsInRole(userId, 'admin')) {
         this.next();
+      } else if (Roles.userIsInRole(userId, 'committee')) { 
+        Router.go('/admin/solicitudes');
       } else {
         Router.go('/');
       }
@@ -30,7 +32,7 @@ Router.map(function() {
   });
 
   this.route('submissions', {
-    path: '/solicitudes',
+    path: '/admin/solicitudes',
     onBeforeAction: function() {
       var userId = Meteor.userId();
 
@@ -66,7 +68,7 @@ Router.map(function() {
       }
     },
 
-    path: '/solicitudes/:userId',
+    path: '/admin/solicitudes/:userId',
 
     waitOn: function() {
       return [
