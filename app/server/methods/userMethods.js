@@ -33,9 +33,10 @@ Meteor.methods({
   createAdminUser: function(user) {
     // sets a schema and checks against it. Throws Meteor error on match fail. Email RegEx is pretty forgiving though
     var userCheck = new SimpleSchema({
-      username: { type: String, },
-      email: { type: String, regEx: SimpleSchema.RegEx.Email, }
+      username: {type: String,},
+      email: {type: String, regEx: SimpleSchema.RegEx.Email,},
     });
+
     check(user, userCheck);
 
     if (!Roles.userIsInRole(this.userId, ['admin',])) {
@@ -51,9 +52,10 @@ Meteor.methods({
 
   createCommitteeUser: function(user) {
     var userCheck = new SimpleSchema({
-      username: { type: String, },
-      email: { type: String, regEx: SimpleSchema.RegEx.Email, }
+      username: {type: String,},
+      email: {type: String, regEx: SimpleSchema.RegEx.Email,},
     });
+
     check(user, userCheck);
 
     if (!Roles.userIsInRole(this.userId, ['admin',])) {
@@ -72,6 +74,10 @@ Meteor.methods({
 
     if (!Roles.userIsInRole(this.userId, ['admin',])) {
       throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error');
+    }
+
+    if (userId === this.userId) {
+      throw new Meteor.Error('not-allowed', 'You can\'t remove yourself dummy!');
     }
 
     return Meteor.users.remove({_id: userId,});
