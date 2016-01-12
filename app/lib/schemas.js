@@ -175,7 +175,7 @@ ApplicationSchema = new SimpleSchema({
 
   acceptTerms: {
     type: Boolean,
-    allowedValues: [true],
+    allowedValues: [true,],
     autoform: {
       type: 'boolean-checkbox',
     },

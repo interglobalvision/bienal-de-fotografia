@@ -2,7 +2,7 @@
   <header id="header" class="container">
     <div class="row">
       <div class="col m6 s12">
-        <img id="logo" src="images/logo-XVIIBF.png" />
+        <img id="logo" src="/images/logo-XVIIBF.png" />
       </div>
       <div class="col m6 s12">
         <ul id="nav">
@@ -10,6 +10,9 @@
           <li><a href="http://centrodelaimagen.conaculta.gob.mx/convocatorias/2016/bienaldefotografia.html" target="_blank">Convocatoria</a></li>
           {{#if isLoggedIn}}
             {{#if isAdmin}}
+              <li><a href="{{pathFor 'admin'}}">Admin</a></li>
+            {{/if}}
+            {{#if isCommitteeOrAdmin}}
               <li><a href="{{pathFor 'submissions'}}">Solicitudes</a></li>
             {{/if}}
             <li><a href="/" class="log-out">Salir</a></li>

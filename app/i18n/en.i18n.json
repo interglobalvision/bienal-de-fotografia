@@ -45,22 +45,14 @@
 
 // Footer
   "footer-text": "<p>En caso de cualquier problema, error o duda por favor escribe al correo <a href='mailto:17bienalfotografia@gmail.com'>17bienalfotografia@gmail.com</a></p>",
+
 // Dashboard
-  "dashboard": "Dashboard",
   "dashboard-application_status": "Estatus de solicitud",
   "dashboard-application_status-all": "Todas",
   "dashboard-application_status-submitted": "Enviadas",
   "dashboard-application_status-signed": "Firmadas",
   "dashboard-application_status-paid": "Pagadas",
   "dashboard-application_status-approved": "Aprobadas",
-  "dashboard-admin_users": "Administradores",
-  "dashboard-committee_users": "Miembros del Comité",
-  "dashboard-remove_user": "Eliminar Usuario",
-  "dashboard-add_user": "Añadir nuevo usuario",
-  "dashboard-add_user-name": "Nombre",
-  "dashboard-add_user-admin": "Administrador",
-  "dashboard-add_user-committee": "Comité",
-  "dashboard-add_user-create": "Crear Usuario",
 
 // Users
   "users": "Usuarios",
@@ -82,17 +74,27 @@
 
   "submissions-image": "Imagen",
   "submissions-name": "Nombre",
-  "submissions-projectTitle": "Título del proyecto",
   "submissions-location": "Ubicación",
   "submissions-contact": "Contacto",
   "submissions-history": "Historia",
   "submissions-proposal": "Propuesta",
-  "submissions-booth": "Stand",
-  "submissions-artists": "Artistas",
   "submissions-mark-paid": "Marcar como Pagado",
   "submissions-waitlist": "Waitlist",
   "submissions-approve": "Aprobar",
   "submissions-remove": "Eliminar",
+
+// Admin
+  "admin": {
+    "dashboard": "Dashboard",
+    "admin": "Administrador",
+    "committee": "Comité",
+    "admins": "Administradores",
+    "committees": "Miembros del Comité",
+    "removeUser": "Eliminar Usuario",
+    "addUser": "Añadir nuevo usuario",
+    "username": "Nombre",
+    "createUser": "Crear Usuario"
+  },
 
 // Application
   "application": {
@@ -165,7 +167,7 @@
       "label":  "Documento de identificación (IFE o documento probatorio)"
     },
     "works": {
-      "label": "Obra",
+      "label": "Obras",
       "$": {
         "title": {
           "label":  "Título"
