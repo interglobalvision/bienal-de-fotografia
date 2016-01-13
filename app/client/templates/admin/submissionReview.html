@@ -4,6 +4,7 @@
   <div class="section">
     <div class="card">
       <div class="card-content">
+        {{#unless isCommittee}}
         <h2>{{_ "application.personalData"}}</h2>
 
         <ul>
@@ -34,6 +35,7 @@
           <li><strong>{{_ "application.otherPhone.label"}}:</strong><p>{{otherPhone}}</p></li>
           {{/if}}
         </ul>
+        {{/unless}}
 
         <h2>{{_ "application.project"}}</h2>
         <ul>
