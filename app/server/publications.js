@@ -22,3 +22,10 @@ Meteor.publish('allApplications', function(userId) {
 Meteor.publish('allUsers', function (){
   return Meteor.users.find();
 });
+
+// Ratings
+Meteor.publish('ratings', function(userId) {
+  check(userId, String);
+
+  return Ratings.find({userId: userId,});
+});
