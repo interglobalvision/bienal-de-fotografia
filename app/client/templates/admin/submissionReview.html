@@ -1,5 +1,5 @@
 <template name="submissionReview">
-  <div class="container">
+<div class="container">
 {{#with application}}
   <div class="section">
     <div class="card">
@@ -74,6 +74,43 @@
       </div>
     </div>
   </div>
-{{/with}}
+  {{#if afterDeadline}}
+  <div class="section">
+    <div class="card">
+      <div class="card-content">
+        <h2>{{_ "application.ratings"}}</h2>
+        {{#if isAdmin}}
+        <div class="section">
+          <span class="card-title grey-text">{{_ "application.averageRating"}}</span>
+          {{#if rating}}
+          <h4>{{rating}}</h4>
+          {{else}}
+          <h4>{{_ "application.notRated"}}</h4>
+          {{/if}}
+        </div>
+        {{/if}}
+        {{#if isCommittee}}
+        <div class="section">
+          <span class="card-title grey-text">{{_ "application.yourRating"}}</span>
+
+          <ul class="u-inline-list">
+            <li class="js-set-rating btn-floating u-align-center grey" data-value="1">1</li>
+            <li class="js-set-rating btn-floating u-align-center grey" data-value="2">2</li>
+            <li class="js-set-rating btn-floating u-align-center grey" data-value="3">3</li>
+            <li class="js-set-rating btn-floating u-align-center grey" data-value="4">4</li>
+            <li class="js-set-rating btn-floating u-align-center grey" data-value="5">5</li>
+            <li class="js-set-rating btn-floating u-align-center grey" data-value="6">6</li>
+            <li class="js-set-rating btn-floating u-align-center grey" data-value="7">7</li>
+            <li class="js-set-rating btn-floating u-align-center grey" data-value="8">8</li>
+            <li class="js-set-rating btn-floating u-align-center grey" data-value="9">9</li>
+            <li class="js-set-rating btn-floating u-align-center grey" data-value="10">10</li>
+          </ul>
+        </div>
+        {{/if}}
+      </div>
+    </div>
   </div>
+  {{/if}}
+{{/with}}
+</div>
 </template>
