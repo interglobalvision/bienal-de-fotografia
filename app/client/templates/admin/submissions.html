@@ -7,7 +7,9 @@
             <th data-field="project" data-empty="bottom">{{_ "application.projectTitle.label"}}</th>
             <th data-field="status">{{_ "application.status"}}</th>
             {{#if isAdmin}}
+              {{#if afterDeadline}}
             <th data-field="rating" data-empty="zero">{{_ "application.rating"}}</th>
+              {{/if}}
             {{/if}}
         </tr>
       </thead>
@@ -33,11 +35,13 @@
             {{status}}
           </td>
           {{#if isAdmin}}
+            {{#if afterDeadline}}
           <td>
             {{#if rating}}
               {{rating}}
             {{/if}}
           </td>
+            {{/if}}
           {{/if}}
         </tr>
         {{/each}}
