@@ -3,6 +3,7 @@
     <table class="striped js-sortable" data-sortlist="[[2,1]]">
       <thead>
         <tr>
+            <th data-field="folio">{{_ "application.folio.label"}}</th>
             <th data-field="name">{{_ "application.name.label"}}</th>
             <th data-field="project" data-empty="bottom">{{_ "application.projectTitle.label"}}</th>
             <th data-field="status">{{_ "application.status"}}</th>
@@ -17,6 +18,11 @@
       <tbody>
         {{#each applications}}
         <tr>
+          <td>
+            {{#if folio}}
+              {{folio}}
+            {{/if}}
+          </td>
           <td>
             <a href="/admin/solicitudes/{{userId}}">
             {{#if name}}

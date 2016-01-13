@@ -125,6 +125,9 @@
     "yourRating": "Tú calificación",
     "averageRating": "Calificación media",
     "notRated": "No calificada",
+    "folio": {
+      "label": "Folio"
+    },
     "personalData": "Datos Personal",
     "name": {
       "label":  "Nombre completo"
