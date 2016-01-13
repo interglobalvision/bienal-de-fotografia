@@ -39,12 +39,9 @@ Handlebars.registerHelper('isCommitteeOrAdmin', function() {
 
 //Deadline
 Handlebars.registerHelper('afterDeadline', function() {
-  /*
   if (moment().isAfter(Meteor.settings.public.applicationDeadline)) {
     return true;
   } else {
     return false;
   }
-  */
-  return true; // Used in development
 });
