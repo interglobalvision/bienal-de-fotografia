@@ -6,10 +6,7 @@ Custom Handlebars helpers.
 
 /+ ---------------------------------------------------- */
 
-Handlebars.registerHelper('myHelper', function(myArgument){
-  return "Hello, " + myArgument;
-});
-
+//Roles
 Handlebars.registerHelper('isAdmin', function() {
   var userId = Meteor.userId();
 
@@ -38,4 +35,16 @@ Handlebars.registerHelper('isCommitteeOrAdmin', function() {
   } else {
     return false;
   }
+});
+
+//Deadline
+Handlebars.registerHelper('afterDeadline', function() {
+  /*
+  if (moment().isAfter(Meteor.settings.public.applicationDeadline)) {
+    return true;
+  } else {
+    return false;
+  }
+  */
+  return true; // Used in development
 });
