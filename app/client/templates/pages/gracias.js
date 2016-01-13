@@ -8,6 +8,7 @@ Template.gracias.helpers({
     });
 
     // Coverts the folio to string
+    // TODO: use formatWithZeros handelbar helper instead
     var folio = application.folio.toString();
 
     // Prepend 0s

@@ -45,3 +45,13 @@ Handlebars.registerHelper('afterDeadline', function() {
     return false;
   }
 });
+
+// Add 0s
+Handlebars.registerHelper('formatWithZeros', function(number) {
+  number = number.toString();
+  while(number.length < 4 ) {
+    number = "0" + number;
+  }
+
+  return number;
+});

@@ -4,7 +4,9 @@
   <div class="section">
     <div class="card">
       <div class="card-content">
-        {{#unless isCommittee}}
+
+        <h2>Folio {{formatWithZeros folio}}</h2>
+
         <h2>{{_ "application.personalData"}}</h2>
 
         <ul>
@@ -12,13 +14,16 @@
           {{#if pseudonym}}
           <li><strong>{{_ "application.pseudonym.label"}}:</strong><p>{{pseudonym}}</p></li>
           {{/if}}
+          {{#unless isCommittee}}
           <li><strong>{{_ "application.birthday.label"}}:</strong><p>{{birthday}}</p></li>
           <li><strong>{{_ "application.birthplace.label"}}:</strong><p>{{birthplace}}</p></li>
           <li><strong>{{_ "application.nationality.label"}}:</strong><p>{{nationality}}</p></li>
           <li><strong>{{_ "application.cv.label"}}:</strong><p>{{cv}}</p></li>
           <li><strong>{{_ "application.identificationDocument.label"}}:</strong><p><img src="{{identificationDocument}}"></p></li>
+          {{/unless}}
         </ul>
 
+        {{#unless isCommittee}}
         <h3>{{_ "application.address"}}</h3>
 
         <ul>
