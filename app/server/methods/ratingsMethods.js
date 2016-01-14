@@ -14,15 +14,6 @@ Meteor.methods({
     // Find existing rating
     var existingRating = Ratings.findOne({userId: Meteor.userId(), applicationId: applicationId,});
 
-    // Create rating update
-    var rating = {
-      userId: Meteor.userId(),
-      applicationId: applicationId,
-      // timestamp as unix timestamp. parse back to moment easily
-      timestamp: moment().format('X'),
-      rating: ratingNumber,
-    };
-
     if (existingRating) {
 
       // Check if the new rating is the same set before, if so, remove rating
@@ -48,7 +39,7 @@ Meteor.methods({
 
     } else {
 
-      if (Ratings.insert(rating)) {
+      if (Ratings.insert({userId: Meteor.userId(), applicationId: applicationId, timestamp: moment().format('X'), rating: ratingNumber,})) {
         Meteor.call('updateApplicationRating', applicationId);
       } else {
         throw new Meteor.Error('error-rating-failed', 'Adding your rating failed.');
