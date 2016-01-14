@@ -120,6 +120,14 @@
     "add": "Añadir",
     "status": "Estatus",
     "noName": "(sin nombre)",
+    "rating": "Calificación",
+    "ratings": "Calificaciónes",
+    "yourRating": "Tú calificación",
+    "averageRating": "Calificación media",
+    "notRated": "No calificada",
+    "folio": {
+      "label": "Folio"
+    },
     "personalData": "Datos Personal",
     "name": {
       "label":  "Nombre completo"
