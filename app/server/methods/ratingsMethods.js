@@ -25,16 +25,25 @@ Meteor.methods({
 
     if (existingRating) {
 
-      // Check if the new rating is the same set before, if so, set is as  0 (unset any rating)
+      // Check if the new rating is the same set before, if so, remove rating
       if( existingRating.rating === ratingNumber ) {
-        rating.rating = 0;
-      }
 
-      // Update rating
-      if (Ratings.update(existingRating._id, rating)) {
-        Meteor.call('updateApplicationRating', applicationId);
+        // Remove rating
+        if (Ratings.remove(existingRating._id)) {
+          Meteor.call('updateApplicationRating', applicationId);
+        } else {
+          throw new Meteor.Error('error-rating-update-failed', 'Updating your rating failed.');
+        }
+
       } else {
-        throw new Meteor.Error('error-rating-update-failed', 'Updating your rating failed.');
+
+        // Update rating
+        if (Ratings.update(existingRating._id, rating)) {
+          Meteor.call('updateApplicationRating', applicationId);
+        } else {
+          throw new Meteor.Error('error-rating-update-failed', 'Updating your rating failed.');
+        }
+
       }
 
     } else {

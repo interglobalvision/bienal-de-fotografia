@@ -8,6 +8,8 @@ Template.submissionReview.onRendered(function() {
     if (userReview) {
       $('.js-set-rating').removeClass('navy').addClass('grey');
       $('li[data-value="' + userReview.rating + '"]').removeClass('grey').addClass('navy');
+    } else {
+      $('.js-set-rating').removeClass('navy').addClass('grey');
     }
 
   });
