@@ -58,7 +58,7 @@ Router.map(function() {
 
         // Check if after deadline
         if (moment().utc().isAfter(Meteor.settings.public.applicationDeadline)) {
-          Router.go('/application-closed');
+          Router.go('/registro-cerrado');
         }
 
         this.next();
@@ -79,6 +79,10 @@ Router.map(function() {
     data: function() {
       return Applications.findOne();
     },
+  });
+
+  this.route('application-closed', {
+    path: '/registro-cerrado',
   });
 
   this.route('gracias', {
