@@ -13,7 +13,7 @@ Meteor.methods({
 
     // Find existing rating
     var existingRating = Ratings.findOne({userId: Meteor.userId(), applicationId: applicationId,});
-    
+
     // Create rating update
     var rating = {
       userId: Meteor.userId(),
@@ -38,7 +38,7 @@ Meteor.methods({
       } else {
 
         // Update rating
-        if (Ratings.update(existingRating._id, rating)) {
+        if (Ratings.update(existingRating._id, {$set: {rating: ratingNumber, timestamp: moment().format('X'),},})) {
           Meteor.call('updateApplicationRating', applicationId);
         } else {
           throw new Meteor.Error('error-rating-update-failed', 'Updating your rating failed.');
