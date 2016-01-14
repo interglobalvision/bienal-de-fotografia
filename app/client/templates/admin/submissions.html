@@ -39,13 +39,13 @@
             {{status}}
           </td>
           {{#if isAdmin}}
-            {{#if isSubmitted}}
           <td>
-            {{#if rating}}
-              {{rating}}
+            {{#if isSubmitted}}
+              {{#if rating}}
+                {{rating}}
+              {{/if}}
             {{/if}}
           </td>
-            {{/if}}
           {{/if}}
         </tr>
         {{/each}}
