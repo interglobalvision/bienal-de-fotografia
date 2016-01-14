@@ -55,3 +55,12 @@ Handlebars.registerHelper('formatWithZeros', function(number) {
 
   return number;
 });
+
+// Is Submitted
+Handlebars.registerHelper('isSubmitted', function() {
+  if (this.status === 'submitted') {
+    return true;
+  } else {
+    return false;
+  }
+});
