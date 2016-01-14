@@ -1,3 +1,11 @@
+Template.submissionReview.helpers({
+
+  breaklines: function (text) {
+    return new Handlebars.SafeString(text.replace(/\n/g, '<br>'));
+  },
+
+});
+
 Template.submissionReview.onRendered(function() {
   var _this = this;
 
