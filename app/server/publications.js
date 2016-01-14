@@ -31,6 +31,15 @@ Meteor.publish('allUsers', function (){
   return Meteor.users.find();
 });
 
+// Publish committee users
+Meteor.publish('committeeUsers', function (){
+  if (!Roles.userIsInRole(this.userId, ['admin',])) {
+    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error');
+  }
+
+  return Roles.getUsersInRole('committee');
+});
+
 // Ratings
 Meteor.publish('ratings', function(userId) {
   check(userId, String);
@@ -40,4 +49,12 @@ Meteor.publish('ratings', function(userId) {
   }
 
   return Ratings.find({userId: userId,});
+});
+
+Meteor.publish('allRatings', function() {
+  if (!Roles.userIsInRole(this.userId, ['admin', 'committee',])) {
+    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error');
+  }
+
+  return Ratings.find();
 });
