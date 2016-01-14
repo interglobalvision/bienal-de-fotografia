@@ -3,8 +3,12 @@ Meteor.methods({
     check(ratingNumber, Number);
     check(applicationId, String);
 
-    if (!Meteor.userId()) {
+    if (!this.userId) {
       throw new Meteor.Error('error-not-signed-in', 'You must sign in first.');
+    }
+
+    if (!Roles.userIsInRole(this.userId, ['committee',])) {
+      throw new Meteor.Error('not-allowed', 'You must be a committee user aka No Juice Error');
     }
 
     var existingRating = Ratings.findOne({userId: Meteor.userId(), applicationId: applicationId,});
@@ -15,26 +19,19 @@ Meteor.methods({
       timestamp: moment().format('X'),
       rating: ratingNumber,
     };
-    var result;
 
     if (existingRating) {
 
-      result = Ratings.update(existingRating._id, rating);
-
-      if (result) {
+      if (Ratings.update(existingRating._id, rating)) {
         Meteor.call('updateApplicationRating', applicationId);
-        return true;
       } else {
         throw new Meteor.Error('error-rating-update-failed', 'Updating your rating failed.');
       }
 
     } else {
 
-      result = Ratings.insert(rating);
-
-      if (result) {
+      if (Ratings.insert(rating)) {
         Meteor.call('updateApplicationRating', applicationId);
-        return true;
       } else {
         throw new Meteor.Error('error-rating-failed', 'Adding your rating failed.');
       }
