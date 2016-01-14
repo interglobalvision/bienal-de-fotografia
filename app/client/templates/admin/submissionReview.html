@@ -81,7 +81,9 @@
       </div>
     </div>
   </div>
-  {{#if isSubmitted}}
+{{/with}}
+
+{{#if isSubmitted application}}
   <div class="section">
     <div class="card">
       <div class="card-content">
@@ -89,8 +91,25 @@
         {{#if isAdmin}}
         <div class="section">
           <span class="card-title grey-text">{{_ "application.averageRating"}}</span>
-          {{#if rating}}
-          <h4>{{rating}}</h4>
+          {{#if application.rating}}
+          <h4>{{application.rating}}</h4>
+          <span class="card-title grey-text">{{_ "application.committeeRatings"}}</span>
+            <table class="striped">
+              <tbody>
+            {{#each committee}}
+              <tr>
+                <td>{{ username }}</td>
+                <td>
+              {{#if userRating _id }}
+                {{ userRating _id }}
+              {{else}}
+                {{_ "application.notRated"}}
+              {{/if}}
+                </td>
+              </tr>
+            {{/each}}
+              </tbody>
+            </table>
           {{else}}
           <h4>{{_ "application.notRated"}}</h4>
           {{/if}}
@@ -117,7 +136,7 @@
       </div>
     </div>
   </div>
-  {{/if}}
-{{/with}}
+{{/if}}
+
 </div>
 </template>

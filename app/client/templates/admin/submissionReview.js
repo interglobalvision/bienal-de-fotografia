@@ -4,6 +4,20 @@ Template.submissionReview.helpers({
     return new Handlebars.SafeString(text.replace(/\n/g, '<br>'));
   },
 
+  userRating: function(userId) {
+    var rating = Ratings.findOne({
+      userId: userId,
+    }, {
+      'rating': true,
+    });
+
+    if (rating) {
+      return rating.rating;
+    } else {
+      return false;
+    }
+  },
+
 });
 
 Template.submissionReview.onRendered(function() {
