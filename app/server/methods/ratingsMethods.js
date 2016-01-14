@@ -11,7 +11,10 @@ Meteor.methods({
       throw new Meteor.Error('not-allowed', 'You must be a committee user aka No Juice Error');
     }
 
+    // Find existing rating
     var existingRating = Ratings.findOne({userId: Meteor.userId(), applicationId: applicationId,});
+    
+    // Create rating update
     var rating = {
       userId: Meteor.userId(),
       applicationId: applicationId,
@@ -22,6 +25,12 @@ Meteor.methods({
 
     if (existingRating) {
 
+      // Check if the new rating is the same set before, if so, set is as  0 (unset any rating)
+      if( existingRating.rating === ratingNumber ) {
+        rating.rating = 0;
+      }
+
+      // Update rating
       if (Ratings.update(existingRating._id, rating)) {
         Meteor.call('updateApplicationRating', applicationId);
       } else {
