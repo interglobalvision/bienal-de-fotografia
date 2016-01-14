@@ -25,8 +25,6 @@ Template.submissionReview.events({
     Meteor.call('rateApplication', rating, applicationId, function(err, result) {
       if (err) {
         console.log(err);
-      } else {
-
       }
     });
   },
