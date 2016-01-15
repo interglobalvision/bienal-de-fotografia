@@ -17,4 +17,4 @@ Accounts.emailTemplates.enrollAccount.subject = function(user) {
 Accounts.emailTemplates.enrollAccount.text = function(user, url) {
   return "Hola. Puedes acceder a tu cuenta de jurado de la XVII Bienal de Fotografía en el siguiente link:\n\n"
   + url;
-}
+};
