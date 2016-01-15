@@ -116,6 +116,7 @@
         </div>
         {{/if}}
         {{#if isCommittee}}
+          {{#with application}}
         <div class="section">
           <span class="card-title grey-text">{{_ "application.yourRating"}}</span>
 
@@ -132,6 +133,7 @@
             <li class="js-set-rating btn-floating u-align-center grey" data-value="10">10</li>
           </ul>
         </div>
+          {{/with}}
         {{/if}}
       </div>
     </div>
