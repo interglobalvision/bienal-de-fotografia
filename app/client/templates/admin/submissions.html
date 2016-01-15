@@ -3,15 +3,29 @@
     <table class="striped js-sortable" data-sortlist="[[3,1]]">
       <thead>
         <tr>
+            <th data-field="folio">{{_ "application.folio.label"}}</th>
             <th data-field="name">{{_ "application.name.label"}}</th>
-            <th data-field="project">{{_ "application.projectTitle.label"}}</th>
+            <th data-field="project" data-empty="bottom">{{_ "application.projectTitle.label"}}</th>
             <th data-field="status">{{_ "application.status"}}</th>
+            <th data-field="rating" data-empty="0">
+            {{#if isAdmin}}
+              {{_ "application.averageRating"}}
+            {{/if}}
+            {{#if isCommittee}}
+              {{_ "application.yourRating"}}
+            {{/if}}
+            </th>
         </tr>
       </thead>
 
       <tbody>
         {{#each applications}}
         <tr>
+          <td>
+            {{#if folio}}
+              {{ formatWithZeros folio}}
+            {{/if}}
+          </td>
           <td>
             <a href="/admin/solicitudes/{{userId}}">
             {{#if name}}
@@ -26,8 +40,29 @@
               {{projectTitle}}
             {{/if}}
           </td>
-          <td>
+          <td>          
             {{status}}
+          </td>
+          <td>
+            {{#if isSubmitted this}}
+
+              {{#if isAdmin}}
+
+                {{#if rating}}
+                  {{rating}}
+                {{/if}}
+
+              {{/if}}
+
+              {{#if isCommittee}}
+
+                {{#if ratingByApplication _id}}
+                  {{ratingByApplication _id}}
+                {{/if}}
+
+              {{/if}}
+
+            {{/if}}
           </td>
         </tr>
         {{/each}}

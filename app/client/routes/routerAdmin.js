@@ -46,6 +46,7 @@ Router.map(function() {
     waitOn: function() {
       return [
         Meteor.subscribe('allApplications'),
+        Meteor.subscribe('ratings', Meteor.userId()),
       ];
     },
 
@@ -71,15 +72,36 @@ Router.map(function() {
     path: '/admin/solicitudes/:userId',
 
     waitOn: function() {
-      return [
-        Meteor.subscribe('singleApplication', this.params.userId),
-      ];
+      var userId = Meteor.userId();
+
+      if (Roles.userIsInRole(userId, 'admin')) {
+        return [
+          Meteor.subscribe('singleApplication', this.params.userId),
+          Meteor.subscribe('ratings', Meteor.userId()),
+          Meteor.subscribe('allRatings'),
+          Meteor.subscribe('committeeUsers'),
+        ];
+      } else if (Roles.userIsInRole(userId, 'committee')) {
+        return [
+          Meteor.subscribe('singleApplication', this.params.userId),
+          Meteor.subscribe('ratings', Meteor.userId()),
+        ];
+      }
     },
 
     data: function() {
-      return {
-        application: Applications.findOne({userId: this.params.userId,}),
-      };
+      var userId = Meteor.userId();
+
+      if (Roles.userIsInRole(userId, 'admin')) {
+        return {
+          application: Applications.findOne({userId: this.params.userId,}),
+          committee: Roles.getUsersInRole('committee'),
+        };
+      } else if (Roles.userIsInRole(userId, 'committee')) {
+        return {
+          application: Applications.findOne({userId: this.params.userId,}),
+        };
+      }
     },
   });
 
