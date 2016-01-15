@@ -96,7 +96,6 @@ Router.map(function() {
         return {
           application: Applications.findOne({userId: this.params.userId,}),
           committee: Roles.getUsersInRole('committee'),
-          ratings: Ratings.find().fetch(),
         };
       } else if (Roles.userIsInRole(userId, 'committee')) {
         return {
