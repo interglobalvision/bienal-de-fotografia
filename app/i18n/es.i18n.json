@@ -237,9 +237,8 @@
     }
   },
   
-  "application-closed": "<h2>El periodo para mandar tu solicitud para Material Art Fair 2016 ha cerrado. 😞</h2>
-    <p class='flow-text'>Agradecemos tu interés en la tercera edición de la feria, la cual se llevará a cabo del 4 al 7 de febrero, 2016 en Expo Reforma, Ciudad de México.</p>
-    <p class='flow-text'>Si deseas más información, no dudes en escribirnos a <a href='mailto:applications@material-fair.com' class='u-inline-block'>applications@material-fair.com</a>.</p>"
+  "application-closed": "<h2>El periodo de inscripción a la XVII Bienal de Fotografía del Centro de la Imagen ha concluido.</h2>
+    <p>Si deseas más información, no dudes en escribirnos a <a href='mailto:17bienalfotografia@gmail.com' class='u-inline-block'>17bienalfotografia@gmail.com</a>.</p>"
 }
 
 // "with-variables": "Hey, %s! You have received %s new messages today."
