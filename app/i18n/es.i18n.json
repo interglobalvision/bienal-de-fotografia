@@ -125,6 +125,7 @@
     "yourRating": "Tú calificación",
     "averageRating": "Calificación media",
     "notRated": "No calificada",
+    "committeeRatings": "Calificaciónes del Comité",
     "folio": {
       "label": "Folio"
     },

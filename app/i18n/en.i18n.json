@@ -125,10 +125,11 @@
     "yourRating": "Tú calificación",
     "averageRating": "Calificación media",
     "notRated": "No calificada",
-    "personalData": "Datos Personal",
+    "committeeRatings": "Calificaciónes del Comité",
     "folio": {
       "label": "Folio"
     },
+    "personalData": "Datos Personal",
     "name": {
       "label":  "Nombre completo"
     },

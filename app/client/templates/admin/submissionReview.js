@@ -1,3 +1,25 @@
+Template.submissionReview.helpers({
+
+  formatWithLinebreak: function (text) {
+    return new Handlebars.SafeString(text.replace(/\n/g, '<br>'));
+  },
+
+  ratingByUser: function(userId) {
+    var rating = Ratings.findOne({
+      userId: userId,
+    }, {
+      'rating': true,
+    });
+
+    if (rating) {
+      return rating.rating;
+    } else {
+      return false;
+    }
+  },
+
+});
+
 Template.submissionReview.onRendered(function() {
   var _this = this;
 

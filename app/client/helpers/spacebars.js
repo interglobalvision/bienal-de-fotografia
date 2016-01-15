@@ -57,8 +57,8 @@ Handlebars.registerHelper('formatWithZeros', function(number) {
 });
 
 // Is Submitted
-Handlebars.registerHelper('isSubmitted', function() {
-  if (this.status === 'submitted') {
+Handlebars.registerHelper('isSubmitted', function(application) {
+  if (application.status === 'submitted') {
     return true;
   } else {
     return false;
