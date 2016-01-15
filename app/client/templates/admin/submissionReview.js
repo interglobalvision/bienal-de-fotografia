@@ -1,10 +1,10 @@
 Template.submissionReview.helpers({
 
-  breaklines: function (text) {
+  formatWithLinebreak: function (text) {
     return new Handlebars.SafeString(text.replace(/\n/g, '<br>'));
   },
 
-  userRating: function(userId) {
+  ratingByUser: function(userId) {
     var rating = Ratings.findOne({
       userId: userId,
     }, {

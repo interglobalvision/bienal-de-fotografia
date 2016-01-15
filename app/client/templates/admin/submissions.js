@@ -1,6 +1,6 @@
 Template.submissions.helpers({
 
-  userRating: function(applicationId) {
+  ratingByApplication: function(applicationId) {
     var _this = this,
     rating = Ratings.findOne({
       userId: Meteor.userId(),

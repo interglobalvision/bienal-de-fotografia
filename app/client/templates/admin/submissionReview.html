@@ -18,7 +18,7 @@
           <li><strong>{{_ "application.birthday.label"}}:</strong><p>{{birthday}}</p></li>
           <li><strong>{{_ "application.birthplace.label"}}:</strong><p>{{birthplace}}</p></li>
           <li><strong>{{_ "application.nationality.label"}}:</strong><p>{{nationality}}</p></li>
-          <li><strong>{{_ "application.cv.label"}}:</strong><p>{{breaklines cv}}</p></li>
+          <li><strong>{{_ "application.cv.label"}}:</strong><p>{{formatWithLinebreak cv}}</p></li>
           <li><strong>{{_ "application.identificationDocument.label"}}:</strong><p><img src="{{identificationDocument}}"></p></li>
           {{/unless}}
         </ul>
@@ -47,10 +47,10 @@
           <li><strong>{{_ "application.projectTitle.label"}}:</strong><p>{{projectTitle}}</p></li>
           <li><strong>{{_ "application.projectDate.label"}}:</strong><p>{{projectDate}}</p></li>
           <li><strong>{{_ "application.projectType.label"}}:</strong><p>{{projectType}}</p></li>
-          <li><strong>{{_ "application.projectDescription.label"}}:</strong><p>{{breaklines projectDescription}}</p></li>
-          <li><strong>{{_ "application.projectRequirements.label"}}:</strong><p>{{breaklines projectRequirements}}</p></li>
+          <li><strong>{{_ "application.projectDescription.label"}}:</strong><p>{{formatWithLinebreak projectDescription}}</p></li>
+          <li><strong>{{_ "application.projectRequirements.label"}}:</strong><p>{{formatWithLinebreak projectRequirements}}</p></li>
           {{#if projectComments}}
-          <li><strong>{{_ "application.projectComments.label"}}:</strong><p>{{breaklines projectComments}}</p></li>
+          <li><strong>{{_ "application.projectComments.label"}}:</strong><p>{{formatWithLinebreak projectComments}}</p></li>
           {{/if}}
           <li><strong>{{_ "application.projectLayout.label"}}:</strong><p><img src="{{projectLayout}}"></p></li>
         </ul>
@@ -100,8 +100,8 @@
               <tr>
                 <td>{{ username }}</td>
                 <td>
-              {{#if userRating _id }}
-                {{ userRating _id }}
+              {{#if ratingByUser _id }}
+                {{ ratingByUser _id }}
               {{else}}
                 {{_ "application.notRated"}}
               {{/if}}
