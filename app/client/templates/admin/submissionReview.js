@@ -1,7 +1,11 @@
 Template.submissionReview.helpers({
 
   formatWithLinebreak: function (text) {
-    return new Handlebars.SafeString(text.replace(/\n/g, '<br>'));
+    if (text) {
+      return new Handlebars.SafeString(text.replace(/\n/g, '<br>'));
+    } else {
+      return false;
+    }
   },
 
   ratingByUser: function(userId) {
