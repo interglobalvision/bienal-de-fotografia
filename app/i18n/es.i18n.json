@@ -50,9 +50,7 @@
   "dashboard-application_status": "Estatus de solicitud",
   "dashboard-application_status-all": "Todas",
   "dashboard-application_status-submitted": "Enviadas",
-  "dashboard-application_status-signed": "Firmadas",
-  "dashboard-application_status-paid": "Pagadas",
-  "dashboard-application_status-approved": "Aprobadas",
+  "dashboard-application_status-saved": "Guardadas",
 
 // Users
   "users": "Usuarios",
@@ -119,6 +117,8 @@
     "edit": "Editar",
     "add": "Añadir",
     "status": "Estatus",
+    "saved": "Guardada",
+    "submitted": "Enviada",
     "noName": "(sin nombre)",
     "rating": "Calificación",
     "ratings": "Calificaciónes",
