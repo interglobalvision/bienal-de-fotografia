@@ -64,9 +64,9 @@
 
 // Submissions
   "submissions-submitted": "Enviadas",
-  "submissions-signed": "Firmadas",
-  "submissions-paid": "Pagadas",
-  "submissions-approved": "Aceptadas",
+  "submissions-saved": "Guardadas",
+  "submission-submitted": "Enviada",
+  "submission-saved": "Guardada",
   "submissions-for-consideration": "En consideración",
   "submissions-already-rated": "Calificadas",
   "submissions-average-rating": "Calificación promedio",
