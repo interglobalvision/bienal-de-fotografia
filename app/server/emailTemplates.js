@@ -15,6 +15,11 @@ Accounts.emailTemplates.enrollAccount.subject = function(user) {
   return "Tu cuenta de jurado | XVII Bienal de Fotografía.";
 };
 Accounts.emailTemplates.enrollAccount.text = function(user, url) {
-  return "Hola. Puedes acceder a tu cuenta de jurado de la XVII Bienal de Fotografía en el siguiente link:\n\n"
+  if(Roles.userIsInRole(user,'committee')) {
+    var role = "jurado";
+  } else if (Roles.userIsInRole(user,'admin')) {
+    var role = "administrador";
+  }
+  return "Hola. Puedes acceder a tu cuenta de " + role + " de la XVII Bienal de Fotografía en el siguiente link:\n\n"
   + url;
 }
