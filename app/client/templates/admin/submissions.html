@@ -1,5 +1,32 @@
 <template name="submissions">
   <div class="container">
+    <div id="dashboard-users-stat" class="section">
+      <div class="row">
+        <div class="col s12">
+          <h4>{{_ "dashboard-application_status"}}</h4>
+        </div>
+        <div class="col s6">
+          <div class="card-panel center-align indigo darken-4">
+            <h6 class="white-text">{{_ "dashboard-application_status-saved"}}</h6>
+            <h3 class="white-text">{{applicationsSavedCount}}</h3>
+          </div>
+        </div>
+        <div class="col s6">
+          <div class="card-panel center-align yellow darken-2">
+            <h6 class="white-text">{{_ "dashboard-application_status-submitted"}}</h6>
+            <h3 class="white-text">{{applicationsSubmittedCount}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <h5 class="u-align-right">Total {{applicationsCount}}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </div>
+  <div class="container">
     <table class="striped js-sortable" data-sortlist="[[3,1]]">
       <thead>
         <tr>
