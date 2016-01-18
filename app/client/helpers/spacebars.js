@@ -64,3 +64,12 @@ Handlebars.registerHelper('isSubmitted', function(application) {
     return false;
   }
 });
+
+// Translate status
+Handlebars.registerHelper('translateStatus', function(status) {
+  if (status === 'saved') {
+    return TAPi18n.__('application.saved');
+  } else if (status === 'submitted') {
+    return TAPi18n.__('application.submitted');
+  }
+});

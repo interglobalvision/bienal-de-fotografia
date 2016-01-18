@@ -16,6 +16,18 @@ Template.submissions.helpers({
     }
   },
 
+  applicationsSavedCount: function() {
+    return Applications.find({status: 'saved',}).count();
+  },
+  
+  applicationsSubmittedCount: function() {
+    return Applications.find({status: 'submitted',}).count();
+  },
+
+  applicationsCount: function() {
+    return Applications.find().count();
+  },
+
 });
 
 Template.submissions.onRendered(function() {
