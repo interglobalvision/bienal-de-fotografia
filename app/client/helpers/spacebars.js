@@ -48,12 +48,16 @@ Handlebars.registerHelper('afterDeadline', function() {
 
 // Add 0s
 Handlebars.registerHelper('formatWithZeros', function(number) {
-  number = number.toString();
-  while(number.length < 4 ) {
-    number = "0" + number;
-  }
+  if (number) {
+    number = number.toString();
+    while(number.length < 4 ) {
+      number = "0" + number;
+    }
 
-  return number;
+    return number;
+  } else {
+    return false;
+  }
 });
 
 // Is Submitted
@@ -67,5 +71,9 @@ Handlebars.registerHelper('isSubmitted', function(application) {
 
 // Translate status
 Handlebars.registerHelper('translateStatus', function(status) {
+  if (status) {
     return TAPi18n.__('application.' + status);
+  } else {
+    return false;
+  }
 });
