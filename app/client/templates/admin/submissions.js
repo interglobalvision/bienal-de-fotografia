@@ -16,6 +16,10 @@ Template.submissions.helpers({
     }
   },
 
+  applicationStatus: function(status) {
+    return TAPi18n.__('submission-' + status);
+  },
+
 });
 
 Template.submissions.onRendered(function() {
