@@ -74,19 +74,12 @@ Router.map(function() {
     waitOn: function() {
       var userId = Meteor.userId();
 
-      if (Roles.userIsInRole(userId, 'admin')) {
-        return [
-          Meteor.subscribe('singleApplication', this.params.userId),
-          Meteor.subscribe('ratings', Meteor.userId()),
-          Meteor.subscribe('allRatings'),
-          Meteor.subscribe('committeeUsers'),
-        ];
-      } else if (Roles.userIsInRole(userId, 'committee')) {
-        return [
-          Meteor.subscribe('singleApplication', this.params.userId),
-          Meteor.subscribe('ratings', Meteor.userId()),
-        ];
-      }
+      return [
+        Meteor.subscribe('singleApplication', this.params.userId),
+        Meteor.subscribe('ratings', Meteor.userId()),
+        Meteor.subscribe('allRatings'),
+        Meteor.subscribe('committeeUsers'),
+      ];
     },
 
     data: function() {
