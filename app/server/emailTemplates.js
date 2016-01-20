@@ -14,11 +14,15 @@ Accounts.emailTemplates.resetPassword.html = function (user, url) {
 Accounts.emailTemplates.enrollAccount.subject = function(user) {
   return "Tu cuenta de jurado | XVII Bienal de Fotografía.";
 };
+
 Accounts.emailTemplates.enrollAccount.html = function(user, url) {
+  var role = '';
+
   if(Roles.userIsInRole(user,'committee')) {
-    var role = "jurado";
+    role = 'jurado';
   } else if (Roles.userIsInRole(user,'admin')) {
-    var role = "administrador";
+    role = 'administrador';
   }
+
   return "Hola. Puedes acceder a tu cuenta de <strong>" + role + "</strong> de la XVII Bienal de Fotografía en el siguiente link:<br><br><a href='" + url + "'>" + url + "</a>";
-}
+};

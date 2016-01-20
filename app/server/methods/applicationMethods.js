@@ -45,9 +45,9 @@ Meteor.methods({
       });
 
       if( lastApplicationWithFolio.hasOwnProperty('folio') ) {
-        applicationUpdate['folio'] = lastApplicationWithFolio.folio + 1;
+        applicationUpdate.folio = lastApplicationWithFolio.folio + 1;
       } else {
-        applicationUpdate['folio'] = 1;
+        applicationUpdate.folio = 1;
       }
 
     }
@@ -55,7 +55,7 @@ Meteor.methods({
     if ( Applications.update(applicationId, {$set: applicationUpdate,}) ) {
 
       // Send email
-      Meteor.call('applicationSubmittedEmail', application.userId, applicationUpdate['folio'], function(error, response) {
+      Meteor.call('applicationSubmittedEmail', application.userId, applicationUpdate.folio, function(error, response) {
         if (error) {
           throw new Meteor.Error(500, 'Error 500: Error while sending email', 'Email not sent.' + error);
         }

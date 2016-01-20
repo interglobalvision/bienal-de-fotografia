@@ -72,8 +72,6 @@ Router.map(function() {
     path: '/admin/solicitudes/:userId',
 
     waitOn: function() {
-      var userId = Meteor.userId();
-
       return [
         Meteor.subscribe('singleApplication', this.params.userId),
       ];
