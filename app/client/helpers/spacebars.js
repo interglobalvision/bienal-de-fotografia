@@ -13,6 +13,7 @@ Handlebars.registerHelper('isAdmin', function() {
   if (Roles.userIsInRole(userId, 'admin')) {
     return true;
   }
+
   return false;
 });
 
@@ -22,6 +23,7 @@ Handlebars.registerHelper('isCommittee', function() {
   if (Roles.userIsInRole(userId, 'committee')) {
     return true;
   }
+
   return false;
 });
 
@@ -31,6 +33,7 @@ Handlebars.registerHelper('isCommitteeOrAdmin', function() {
   if (Roles.userIsInRole(userId, 'committee') || Roles.userIsInRole(userId, 'admin')) {
     return true;
   }
+
   return false;
 });
 
@@ -39,6 +42,7 @@ Handlebars.registerHelper('afterDeadline', function() {
   if (moment().isAfter(Meteor.settings.public.applicationDeadline)) {
     return true;
   }
+
   return false;
 });
 
@@ -52,6 +56,7 @@ Handlebars.registerHelper('formatWithZeros', function(number) {
 
     return number;
   }
+
   return false;
 });
 
@@ -60,6 +65,7 @@ Handlebars.registerHelper('isSubmitted', function(application) {
   if (application.status === 'submitted') {
     return true;
   }
+
   return false;
 });
 
@@ -68,5 +74,6 @@ Handlebars.registerHelper('translateStatus', function(status) {
   if (status) {
     return TAPi18n.__('application.' + status);
   }
+
   return false;
 });
