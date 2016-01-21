@@ -4,7 +4,7 @@ Meteor.methods({
   saveApplication: function(applicationId, applicationUpdate) {
 
     if (!Meteor.userId()) {
-      throw new Meteor.Error('not-signed-in', 'You must register a user first before creating an application.');
+      throw new Meteor.Error('not-signed-in', 'You must register a user first before creating an application.', '864');
     }
 
     var application = Applications.findOne(applicationId);
@@ -28,7 +28,7 @@ Meteor.methods({
     var application = Applications.findOne(applicationId);
 
     if (Meteor.userId() !== application.userId) {
-      throw new Meteor.Error('not-allowed', 'You must own this application to change it.');
+      throw new Meteor.Error('not-allowed', 'You must own this application to change it.', '854');
     }
 
     // Check if this application has a folio already
@@ -57,7 +57,7 @@ Meteor.methods({
       // Send email
       Meteor.call('applicationSubmittedEmail', application.userId, applicationUpdate.folio, function(error, response) {
         if (error) {
-          throw new Meteor.Error(500, 'Error 500: Error while sending email', 'Email not sent.' + error);
+          throw new Meteor.Error(500, 'Error 500: Error while sending email', 'Email not sent.' + error, '812');
         }
       });
     }

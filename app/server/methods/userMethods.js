@@ -20,11 +20,11 @@ Meteor.methods({
     check(role, String);
 
     if ((role !== 'committee' && role !== 'admin')) {
-      throw new Meteor.Error('bad-request', 'No valid role.');
+      throw new Meteor.Error('bad-request', 'No valid role.', '523');
     }
 
     if (!Roles.userIsInRole(this.userId, ['admin',])) {
-      throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error');
+      throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error', '541');
     }
 
     return Roles.addUsersToRoles(userId, [role,]);
@@ -40,7 +40,7 @@ Meteor.methods({
     check(user, userCheck);
 
     if (!Roles.userIsInRole(this.userId, ['admin',])) {
-      throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error');
+      throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error', '542');
     }
 
     var userId = Accounts.createUser(user);
@@ -54,11 +54,11 @@ Meteor.methods({
     check(userId, String);
 
     if (!Roles.userIsInRole(this.userId, ['admin',])) {
-      throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error');
+      throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error', '543');
     }
 
     if (userId === this.userId) {
-      throw new Meteor.Error('not-allowed', 'You can\'t remove yourself dummy!');
+      throw new Meteor.Error('not-allowed', 'You can\'t remove yourself dummy!', '599');
     }
 
     return Meteor.users.remove({_id: userId,});

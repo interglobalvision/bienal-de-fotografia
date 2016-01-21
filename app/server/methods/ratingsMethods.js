@@ -4,7 +4,7 @@ Meteor.methods({
     check(applicationId, String);
 
     if (!this.userId) {
-      throw new Meteor.Error('error-not-signed-in', 'You must sign in first.');
+      throw new Meteor.Error('error-not-signed-in', 'You must sign in first.', '654');
     }
 
     if (!Roles.userIsInRole(this.userId, ['committee',])) {
@@ -23,7 +23,7 @@ Meteor.methods({
         if (Ratings.remove(existingRating._id)) {
           Meteor.call('updateApplicationRating', applicationId);
         } else {
-          throw new Meteor.Error('error-rating-update-failed', 'Updating your rating failed.');
+          throw new Meteor.Error('error-rating-update-failed', 'Updating your rating failed.', '643');
         }
 
       } else {
@@ -32,7 +32,7 @@ Meteor.methods({
         if (Ratings.update(existingRating._id, {$set: {rating: ratingNumber, timestamp: moment().format('X'),},})) {
           Meteor.call('updateApplicationRating', applicationId);
         } else {
-          throw new Meteor.Error('error-rating-update-failed', 'Updating your rating failed.');
+          throw new Meteor.Error('error-rating-update-failed', 'Updating your rating failed.', '642');
         }
 
       }
@@ -42,7 +42,7 @@ Meteor.methods({
       if (Ratings.insert({userId: Meteor.userId(), applicationId: applicationId, timestamp: moment().format('X'), rating: ratingNumber,})) {
         Meteor.call('updateApplicationRating', applicationId);
       } else {
-        throw new Meteor.Error('error-rating-failed', 'Adding your rating failed.');
+        throw new Meteor.Error('error-rating-failed', 'Adding your rating failed.', '611');
       }
 
     }
