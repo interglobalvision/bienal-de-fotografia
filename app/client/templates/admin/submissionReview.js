@@ -24,15 +24,20 @@ Template.submissionReview.helpers({
 
 });
 
+Template.submissionReview.onCreated(function() {
+  var _this = this;
+
+  Meteor.subscribe('ratings', Meteor.userId());
+  Meteor.subscribe('allRatings');
+  Meteor.subscribe('committeeUsers');
+
+});
+
 Template.submissionReview.onRendered(function() {
   var _this = this;
 
   //highlight users rating value if set
   _this.autorun(function () {
-
-    Meteor.subscribe('ratings', Meteor.userId());
-    Meteor.subscribe('allRatings');
-    Meteor.subscribe('committeeUsers');
 
     var userReview = Ratings.findOne({applicationId: _this.data.application._id,});
 
