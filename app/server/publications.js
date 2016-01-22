@@ -16,7 +16,7 @@ Meteor.publish('singleApplication', function(userId) {
 // Publish all applications
 Meteor.publish('allApplications', function(userId) {
   if (!Roles.userIsInRole(this.userId, ['admin', 'committee',])) {
-    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error');
+    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error', '331');
   }
 
   return Applications.find();
@@ -25,7 +25,7 @@ Meteor.publish('allApplications', function(userId) {
 // Publish users
 Meteor.publish('allUsers', function (){
   if (!Roles.userIsInRole(this.userId, ['admin',])) {
-    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error');
+    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error', '332');
   }
 
   return Meteor.users.find();
@@ -34,7 +34,7 @@ Meteor.publish('allUsers', function (){
 // Publish committee users
 Meteor.publish('committeeUsers', function (){
   if (!Roles.userIsInRole(this.userId, ['admin',])) {
-    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error');
+    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error', '333');
   }
 
   return Roles.getUsersInRole('committee');
@@ -45,7 +45,7 @@ Meteor.publish('ratings', function(userId) {
   check(userId, String);
 
   if (!Roles.userIsInRole(this.userId, ['admin', 'committee',])) {
-    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error');
+    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error', '334');
   }
 
   return Ratings.find({userId: userId,});
@@ -53,7 +53,7 @@ Meteor.publish('ratings', function(userId) {
 
 Meteor.publish('allRatings', function() {
   if (!Roles.userIsInRole(this.userId, ['admin', 'committee',])) {
-    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error');
+    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error', '335');
   }
 
   return Ratings.find();

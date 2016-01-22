@@ -17,7 +17,7 @@ Slingshot.createDirective('imageUpload', Slingshot.S3Storage, {
 
   authorize: function () {
     if (!this.userId) {
-      throw new Meteor.Error('not-signed-in', 'You must register a user first before uploading a file.');
+      throw new Meteor.Error('not-signed-in', 'You must register a user first before uploading a file.', '234');
     }
 
     return true;
