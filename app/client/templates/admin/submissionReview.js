@@ -27,9 +27,11 @@ Template.submissionReview.helpers({
 Template.submissionReview.onCreated(function() {
   var _this = this;
 
-  Meteor.subscribe('ratings', Meteor.userId());
-  Meteor.subscribe('allRatings');
-  Meteor.subscribe('committeeUsers');
+  _this.autorun(function () {
+    Meteor.subscribe('ratings', Meteor.userId());
+    Meteor.subscribe('allRatings');
+    Meteor.subscribe('committeeUsers');
+  });
 
 });
 
