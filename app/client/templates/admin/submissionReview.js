@@ -9,8 +9,10 @@ Template.submissionReview.helpers({
   },
 
   ratingByUser: function(userId) {
+    var application = Applications.findOne();
     var rating = Ratings.findOne({
       userId: userId,
+      applicationId: application._id
     }, {
       'rating': true,
     });
@@ -29,9 +31,14 @@ Template.submissionReview.onCreated(function() {
 
   _this.autorun(function () {
     Meteor.subscribe('ratings', Meteor.userId());
-    Meteor.subscribe('allRatings');
     Meteor.subscribe('committeeUsers');
   });
+
+  if( Roles.userIsInRole( Meteor.userId(), ['admin'] ) ) {
+    _this.autorun(function () {
+      Meteor.subscribe('allRatings');
+    });
+  }
 
 });
 
