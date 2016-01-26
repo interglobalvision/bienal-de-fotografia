@@ -74,7 +74,7 @@ Meteor.methods({
       throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error');
     }
 
-    return Applications.update(applicationId, { $set: { status: "canceled" } } );
+    return Applications.update(applicationId, { $set: { status: 'canceled' } } );
   
   },
 
@@ -89,7 +89,7 @@ Meteor.methods({
       throw new Meteor.Error('not-allowed', 'You must be admin aka No Juice Error');
     }
 
-    return Applications.update(applicationId, { $set: { status: "submitted" } } );
+    return Applications.update(applicationId, { $set: { status: 'submitted' } } );
   
   },
 
