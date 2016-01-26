@@ -1,10 +1,12 @@
 Template.submissions.events({
   'click .cancel-application': function(event){
+    var _this = this;
+
     event.preventDefault();
 
     if(confirm(TAPi18n.__('admin.confirmCancelApplication'))) {
 
-      var applicationId = this._id;
+      var applicationId = _this._id;
 
       if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
         Meteor.call('cancelApplication', applicationId, function(error, result) {
@@ -12,7 +14,7 @@ Template.submissions.events({
             alert(error);
           } else {
             Materialize.toast(TAPi18n.__('admin.applicationCanceled', 3000));
-          }
+    m     }
         });
       } else {
         Materialize.toast("You don't have permission", 3000);
