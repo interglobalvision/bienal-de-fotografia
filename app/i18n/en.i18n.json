@@ -51,6 +51,7 @@
   "dashboard-application_status-all": "Todas",
   "dashboard-application_status-submitted": "Enviadas",
   "dashboard-application_status-saved": "Guardadas",
+  "dashboard-application_canceled": "Solicitudes canceladas",
 
 // Users
   "users": "Usuarios",
@@ -94,7 +95,9 @@
     "createUser": "Crear Usuario",
     "userRemoved": "Usuario eliminado",
     "applicationCanceled": "Solicitud cancelada",
+    "applicationCanceled": "Solicitud restaurada",
     "confirmCancelApplication": "¿Estás seguro que deseas cancelar esta solicitud?"
+    "confirmRestoreApplication": "¿Estás seguro que deseas restaurar esta solicitud?"
   },
 
 // Application
