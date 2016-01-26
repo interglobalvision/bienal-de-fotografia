@@ -1,5 +1,5 @@
 <template name="submissions">
-  <div class="container">
+  <div class="container submissions">
     <div id="dashboard-users-stat" class="section">
       <div class="row">
         <div class="col s12">
@@ -47,51 +47,56 @@
 
       <tbody>
         {{#each applications}}
-        <tr>
-          <td>
-            {{#if folio}}
-              {{ formatWithZeros folio}}
-            {{/if}}
-          </td>
-          <td>
-            <a href="/admin/solicitudes/{{userId}}">
-            {{#if name}}
-              {{name}}
-            {{else}}
-              {{_ "application.noName"}}
-            {{/if}}
-            </a>
-          </td>
-          <td>
-            {{#if projectTitle}}
-              {{projectTitle}}
-            {{/if}}
-          </td>
-          <td>          
-            {{translateStatus status}}
-          </td>
-          <td>
-            {{#if isSubmitted this}}
-
+          {{#if applicationNotCanceled }}
+          <tr>
+            <td>
+              {{#if folio}}
+                {{ formatWithZeros folio}}
+              {{/if}}
+            </td>
+            <td>
+              <a href="/admin/solicitudes/{{userId}}">
+              {{#if name}}
+                {{name}}
+              {{else}}
+                {{_ "application.noName"}}
+              {{/if}}
+              </a>
               {{#if isAdmin}}
+              <a class="u-pointer cancel-application red-text"><i class="material-icons">remove_circle</i></a>
+              {{/if}}
+            </td>
+            <td>
+              {{#if projectTitle}}
+                {{projectTitle}}
+              {{/if}}
+            </td>
+            <td>          
+              {{translateStatus status}}
+            </td>
+            <td>
+              {{#if isSubmitted this}}
 
-                {{#if rating}}
-                  {{rating}}
+                {{#if isAdmin}}
+
+                  {{#if rating}}
+                    {{rating}}
+                  {{/if}}
+
+                {{/if}}
+
+                {{#if isCommittee}}
+
+                  {{#if ratingByApplication _id}}
+                    {{ratingByApplication _id}}
+                  {{/if}}
+
                 {{/if}}
 
               {{/if}}
-
-              {{#if isCommittee}}
-
-                {{#if ratingByApplication _id}}
-                  {{ratingByApplication _id}}
-                {{/if}}
-
-              {{/if}}
-
-            {{/if}}
-          </td>
-        </tr>
+            </td>
+          </tr>
+          {{/if}}
         {{/each}}
       </tbody>
     </table>
