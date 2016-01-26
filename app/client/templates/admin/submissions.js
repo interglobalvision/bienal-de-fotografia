@@ -28,15 +28,6 @@ Template.submissions.helpers({
     return Applications.find({status: { $in: [ 'submitted', 'saved', ], }, }).count();
   },
 
-  applicationNotCanceled: function() {
-    var _this = this;
-
-    if(_this.status !== 'canceled') {
-      return true;
-    }
-    return false;
-  },
-
 });
 
 Template.submissions.onRendered(function() {
@@ -63,6 +54,31 @@ Template.submissions.events({
             alert(error);
           } else {
             Materialize.toast(TAPi18n.__('admin.applicationCanceled'), 3000);
+          }
+        });
+      } else {
+        Materialize.toast("You don't have permission", 3000);
+        Router.go('/');
+      }
+
+    }
+  },
+
+  'click .restore-application': function(event){
+    var _this = this;
+
+    event.preventDefault();
+
+    if(confirm(TAPi18n.__('admin.confirmRestoreApplication'))) {
+
+      var applicationId = _this._id;
+
+      if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+        Meteor.call('restoreApplication', applicationId, function(error, result) {
+          if (error) {
+            alert(error);
+          } else {
+            Materialize.toast(TAPi18n.__('admin.applicationRestored'), 3000);
           }
         });
       } else {

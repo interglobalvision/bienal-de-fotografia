@@ -47,56 +47,35 @@
 
       <tbody>
         {{#each applications}}
-          {{#if applicationNotCanceled }}
-          <tr>
-            <td>
-              {{#if folio}}
-                {{ formatWithZeros folio}}
-              {{/if}}
-            </td>
-            <td>
-              <a href="/admin/solicitudes/{{userId}}">
-              {{#if name}}
-                {{name}}
-              {{else}}
-                {{_ "application.noName"}}
-              {{/if}}
-              </a>
-              {{#if isAdmin}}
-              <a class="u-pointer cancel-application red-text"><i class="material-icons">remove_circle</i></a>
-              {{/if}}
-            </td>
-            <td>
-              {{#if projectTitle}}
-                {{projectTitle}}
-              {{/if}}
-            </td>
-            <td>          
-              {{translateStatus status}}
-            </td>
-            <td>
-              {{#if isSubmitted this}}
+        {{> submissionRow}} 
+        {{/each}}
+      </tbody>
+    </table>
+    <div class="divider"></div>
+  </div>
+  <div class="container">
+    <h4>{{_ "dashboard-application_canceled"}}</h4>
+    <table class="striped js-sortable" data-sortlist="[[3,0]]">
+      <thead>
+        <tr>
+            <th data-field="folio">{{_ "application.folio.label"}}</th>
+            <th data-field="name">{{_ "application.name.label"}}</th>
+            <th data-field="project" data-empty="bottom">{{_ "application.projectTitle.label"}}</th>
+            <th data-field="status">{{_ "application.status"}}</th>
+            <th data-field="rating" data-empty="0">
+            {{#if isAdmin}}
+              {{_ "application.averageRating"}}
+            {{/if}}
+            {{#if isCommittee}}
+              {{_ "application.yourRating"}}
+            {{/if}}
+            </th>
+        </tr>
+      </thead>
 
-                {{#if isAdmin}}
-
-                  {{#if rating}}
-                    {{rating}}
-                  {{/if}}
-
-                {{/if}}
-
-                {{#if isCommittee}}
-
-                  {{#if ratingByApplication _id}}
-                    {{ratingByApplication _id}}
-                  {{/if}}
-
-                {{/if}}
-
-              {{/if}}
-            </td>
-          </tr>
-          {{/if}}
+      <tbody>
+        {{#each canceledApplications}}
+          {{> submissionRow}} 
         {{/each}}
       </tbody>
     </table>

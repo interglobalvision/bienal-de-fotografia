@@ -51,6 +51,7 @@
   "dashboard-application_status-all": "Todas",
   "dashboard-application_status-submitted": "Enviadas",
   "dashboard-application_status-saved": "Guardadas",
+  "dashboard-application_canceled": "Solicitudes canceladas",
 
 // Users
   "users": "Usuarios",
