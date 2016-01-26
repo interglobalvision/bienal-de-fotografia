@@ -93,7 +93,8 @@
     "username": "Nombre",
     "createUser": "Crear Usuario",
     "userRemoved": "Usuario eliminado",
-    "applicationCanceled": "Solicitud cancelada"
+    "applicationCanceled": "Solicitud cancelada",
+    "confirmCancelApplication": "¿Estás seguro que deseas cancelar esta solicitud?"
   },
 
 // Application
