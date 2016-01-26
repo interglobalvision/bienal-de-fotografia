@@ -25,7 +25,7 @@ Template.submissions.helpers({
   },
 
   applicationsCount: function() {
-    return Applications.find().count();
+    return Applications.find({status: { $in: [ 'submitted', 'saved', ], }, }).count();
   },
 
   applicationNotCanceled: function() {
@@ -62,8 +62,8 @@ Template.submissions.events({
           if (error) {
             alert(error);
           } else {
-            Materialize.toast(TAPi18n.__('admin.applicationCanceled', 3000));
-    m     }
+            Materialize.toast(TAPi18n.__('admin.applicationCanceled'), 3000);
+          }
         });
       } else {
         Materialize.toast("You don't have permission", 3000);
