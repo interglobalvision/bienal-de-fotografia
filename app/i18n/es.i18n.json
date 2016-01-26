@@ -91,7 +91,9 @@
     "removeUser": "Eliminar Usuario",
     "addUser": "Añadir nuevo usuario",
     "username": "Nombre",
-    "createUser": "Crear Usuario"
+    "createUser": "Crear Usuario",
+    "userRemoved": "Usuario eliminado",
+    "applicationCanceled": "Solicitud cancelada"
   },
 
 // Application
@@ -119,6 +121,7 @@
     "status": "Estatus",
     "saved": "Guardada",
     "submitted": "Enviada",
+    "canceled": "Cancelada",
     "noName": "(sin nombre)",
     "rating": "Calificación",
     "ratings": "Calificaciónes",
