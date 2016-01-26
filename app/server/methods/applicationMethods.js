@@ -73,7 +73,7 @@ Meteor.methods({
     // ???
 
     if (!Meteor.userId()) {
-      throw new Meteor.Error('not-signed-in', 'You must register a user first before creating an application.', '864');
+      throw new Meteor.Error('not-signed-in', 'You are not logged in.', '864');
     }
 
     var application = Applications.findOne(applicationId);
