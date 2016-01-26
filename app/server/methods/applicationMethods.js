@@ -63,4 +63,22 @@ Meteor.methods({
     }
   },
 
+  cancelApplication: function(applicationId) {
+    check(applicationId, String);
+
+    // Should i check role here?
+    // i mean, i wonder if we should check role here, or in the front end
+    // right now role is being cheked before this method get calles
+    // mmm
+    // ???
+
+    if (!Meteor.userId()) {
+      throw new Meteor.Error('not-signed-in', 'You must register a user first before creating an application.', '864');
+    }
+
+    var application = Applications.findOne(applicationId);
+
+    return Applications.update(application._id, { $set: { status: "canceled" } } );
+  },
+
 });
