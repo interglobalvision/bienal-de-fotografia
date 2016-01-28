@@ -12,6 +12,7 @@
   "alert-invalid_input": "Entrada invalida",
   "alert-application_saved": "Solicitud guardada",
   "alert-application_submitted": "Solicitud enviada",
+  "alert-application_note_saved": "Anotaciones guardadas",
   "alert-upload_success": "Carga existosa",
   "alert-reset_sent": "Link  para recuperar la contraseña enviado",
   "alert-login": "Has iniciado sesión",
@@ -126,6 +127,8 @@
     "averageRating": "Calificación media",
     "notRated": "No calificada",
     "committeeRatings": "Calificaciónes del Comité",
+    "notes": "Anotaciones",
+    "notAnnotated": "Sin anotaciones",
     "folio": {
       "label": "Folio"
     },
