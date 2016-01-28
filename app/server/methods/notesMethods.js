@@ -12,7 +12,7 @@ Meteor.methods({
     }
 
     // Update note
-    Notes.update({userId: Meteor.userId(), applicationId: applicationId,}, { $set: { note: noteText } }, { upsert: true});
+    Notes.update({userId: Meteor.userId(), applicationId: applicationId,}, {$set: {note: noteText,},}, {upsert: true,});
 
   },
 
