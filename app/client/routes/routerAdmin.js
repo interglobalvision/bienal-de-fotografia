@@ -9,7 +9,7 @@ Router.map(function() {
 
       if (Roles.userIsInRole(userId, 'admin')) {
         this.next();
-      } else if (Roles.userIsInRole(userId, 'committee')) { 
+      } else if (Roles.userIsInRole(userId, 'committee')) {
         Router.go('/admin/solicitudes');
       } else {
         Router.go('/');

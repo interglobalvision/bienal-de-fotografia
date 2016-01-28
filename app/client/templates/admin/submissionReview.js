@@ -4,7 +4,7 @@ Template.submissionReview.helpers({
     var application = Applications.findOne();
     var rating = Ratings.findOne({
       userId: userId,
-      applicationId: application._id
+      applicationId: application._id,
     }, {
       'rating': true,
     });
@@ -20,14 +20,14 @@ Template.submissionReview.helpers({
     var application = Applications.findOne();
     var note = Notes.findOne({
       userId: Meteor.userId(),
-      applicationId: application._id
+      applicationId: application._id,
     }, {
       'note': true,
     });
 
     if (note) {
       return note.note;
-    } 
+    }
     return false;
   },
 
@@ -36,7 +36,7 @@ Template.submissionReview.helpers({
     var application = Applications.findOne();
     var note = Notes.findOne({
       userId: userId,
-      applicationId: application._id
+      applicationId: application._id,
     }, {
       'note': true,
     });
@@ -51,7 +51,7 @@ Template.submissionReview.helpers({
 
 Template.submissionReview.onCreated(function() {
   var _this = this;
-  
+
   _this.autorun(function () {
     Meteor.subscribe('ratings', Meteor.userId());
     Meteor.subscribe('notes', Meteor.userId(), _this.data.application._id);
@@ -61,7 +61,7 @@ Template.submissionReview.onCreated(function() {
 
   });
 
-  if( Roles.userIsInRole( Meteor.userId(), ['admin'] ) ) {
+  if( Roles.userIsInRole( Meteor.userId(), ['admin',] ) ) {
     _this.autorun(function () {
       Meteor.subscribe('allRatings');
       Meteor.subscribe('allNotes');
@@ -103,6 +103,7 @@ Template.submissionReview.events({
       }
     });
   },
+
   'click #save-note': function(e) {
     var _this = this,
       note = $('#note-textarea').val(),
@@ -115,6 +116,6 @@ Template.submissionReview.events({
         Materialize.toast(TAPi18n.__('alert-application_note_saved'), 3000);
       }
     });
-      
+
   },
 });
