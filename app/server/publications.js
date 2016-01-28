@@ -62,6 +62,7 @@ Meteor.publish('allRatings', function() {
 // Notes
 Meteor.publish('notes', function(userId, applicationId) {
   check(userId, String);
+  check(userId, String);
 
   if (!Roles.userIsInRole(this.userId, ['admin', 'committee',])) {
     throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error', '334');
