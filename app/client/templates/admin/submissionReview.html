@@ -137,6 +137,45 @@
         {{/if}}
       </div>
     </div>
+  </div><div class="section">
+    <div class="card">
+      <div class="card-content">
+        <h2>{{_ "application.notes"}}</h2>
+        {{#if isAdmin}}
+        <div class="section">
+          <table class="striped">
+            <tbody>
+              {{#each committee}}
+              <tr>
+                <td>{{ username }}</td>
+                <td>
+                  {{#if noteByUser _id }}
+                    {{ noteByUser _id }}
+                  {{else}}
+                    {{_ "application.not_annotated"}}
+                  {{/if}}
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+        {{/if}}
+        {{#if isCommittee}}
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="note-textarea" class="materialize-textarea">{{note}}</textarea>
+                </div>
+              </div>
+              <a id="save-note" class="waves-effect waves-light btn">{{_ "application.save"}}</a>
+            </form>
+
+          </div>
+        {{/if}}
+      </div>
+    </div>
   </div>
 {{/if}}
 

@@ -58,3 +58,22 @@ Meteor.publish('allRatings', function() {
 
   return Ratings.find();
 });
+
+// Notes
+Meteor.publish('notes', function(userId, applicationId) {
+  check(userId, String);
+
+  if (!Roles.userIsInRole(this.userId, ['admin', 'committee',])) {
+    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error', '334');
+  }
+
+  return Notes.find({userId: userId, applicationId: applicationId});
+});
+
+Meteor.publish('allNotes', function() {
+  if (!Roles.userIsInRole(this.userId, ['admin', 'committee',])) {
+    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error', '335');
+  }
+
+  return Notes.find();
+});

@@ -60,6 +60,13 @@ Handlebars.registerHelper('formatWithZeros', function(number) {
   return false;
 });
 
+Handlebars.registerHelper('formatWithLinebreak', function(text) {
+  if (text) {
+    return new Handlebars.SafeString(text.replace(/\n/g, '<br>'));
+  } 
+  return false;
+});
+
 // Is Submitted
 Handlebars.registerHelper('isSubmitted', function(application) {
   if (application.status === 'submitted') {

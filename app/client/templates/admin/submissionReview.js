@@ -1,13 +1,5 @@
 Template.submissionReview.helpers({
 
-  formatWithLinebreak: function (text) {
-    if (text) {
-      return new Handlebars.SafeString(text.replace(/\n/g, '<br>'));
-    } else {
-      return false;
-    }
-  },
-
   ratingByUser: function(userId) {
     var application = Applications.findOne();
     var rating = Ratings.findOne({
@@ -24,19 +16,55 @@ Template.submissionReview.helpers({
     }
   },
 
+  note: function() {
+    var application = Applications.findOne();
+    var note = Notes.findOne({
+      userId: Meteor.userId(),
+      applicationId: application._id
+    }, {
+      'note': true,
+    });
+
+    if (note) {
+      return note.note;
+    } 
+    return false;
+  },
+
+  noteByUser: function(userId) {
+    userId = typeof userId !== 'undefined'? userId : Meteor.userId();
+    var application = Applications.findOne();
+    var note = Notes.findOne({
+      userId: userId,
+      applicationId: application._id
+    }, {
+      'note': true,
+    });
+
+    if (note) {
+      return new Handlebars.SafeString(note.note.replace(/\n/g, '<br>'));
+    }
+    return false;
+  },
+
 });
 
 Template.submissionReview.onCreated(function() {
   var _this = this;
-
+  
   _this.autorun(function () {
     Meteor.subscribe('ratings', Meteor.userId());
+    Meteor.subscribe('notes', Meteor.userId(), _this.data.application._id);
     Meteor.subscribe('committeeUsers');
+
+    $('textarea').trigger('autoresize');
+
   });
 
   if( Roles.userIsInRole( Meteor.userId(), ['admin'] ) ) {
     _this.autorun(function () {
       Meteor.subscribe('allRatings');
+      Meteor.subscribe('allNotes');
     });
   }
 
@@ -74,5 +102,19 @@ Template.submissionReview.events({
         console.log(err);
       }
     });
+  },
+  'click #save-note': function(e) {
+    var _this = this,
+      note = $('#note-textarea').val(),
+      applicationId = _this.application._id;
+
+    Meteor.call('updateApplicationNote', note, applicationId, function(err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        Materialize.toast(TAPi18n.__('alert-application_note_saved'), 3000);
+      }
+    });
+      
   },
 });
