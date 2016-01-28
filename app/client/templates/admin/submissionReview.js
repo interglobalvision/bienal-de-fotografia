@@ -28,6 +28,7 @@ Template.submissionReview.helpers({
     if (note) {
       return note.note;
     }
+
     return false;
   },
 
@@ -44,6 +45,7 @@ Template.submissionReview.helpers({
     if (note) {
       return new Handlebars.SafeString(note.note.replace(/\n/g, '<br>'));
     }
+
     return false;
   },
 
