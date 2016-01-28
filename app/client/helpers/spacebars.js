@@ -60,9 +60,9 @@ Handlebars.registerHelper('formatWithZeros', function(number) {
   return false;
 });
 
-// Is Submitted
-Handlebars.registerHelper('isSubmitted', function(application) {
-  if (application.status === 'submitted') {
+// Application Is
+Handlebars.registerHelper('applicationIs', function(status, application) {
+  if (application.status === status) {
     return true;
   }
 

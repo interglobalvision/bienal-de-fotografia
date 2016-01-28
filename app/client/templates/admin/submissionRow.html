@@ -1,0 +1,57 @@
+<template name="submissionRow">
+  <tr>
+    <td>
+      {{#if folio}}
+        {{ formatWithZeros folio}}
+      {{/if}}
+    </td>
+    <td>
+      <a href="/admin/solicitudes/{{userId}}">
+        {{#if name}}
+        {{name}}
+        {{else}}
+        {{_ "application.noName"}}
+        {{/if}}
+      </a>
+      {{#if applicationIs 'submitted' this}}
+        {{#if isAdmin}}
+        <a class="u-pointer cancel-application red-text"><i class="material-icons">remove_circle</i></a>
+        {{/if}}
+      {{/if}}
+      {{#if applicationIs 'canceled' this}}
+        {{#if isAdmin}}
+        <a class="u-pointer restore-application light-green-text"><i class="material-icons">undo</i></a>
+        {{/if}}
+      {{/if}}
+    </td>
+    <td>
+      {{#if projectTitle}}
+        {{projectTitle}}
+      {{/if}}
+    </td>
+    <td>          
+      {{translateStatus status}}
+    </td>
+    <td>
+      {{#if applicationIs 'submitted' this}}
+
+        {{#if isAdmin}}
+
+          {{#if rating}}
+            {{rating}}
+          {{/if}}
+
+        {{/if}}
+
+        {{#if isCommittee}}
+
+          {{#if ratingByApplication _id}}
+            {{ratingByApplication _id}}
+          {{/if}}
+
+        {{/if}}
+
+      {{/if}}
+    </td>
+  </tr>
+</template>
