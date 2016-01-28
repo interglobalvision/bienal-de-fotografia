@@ -47,14 +47,14 @@
 
       <tbody>
         {{#each applications}}
-        {{> submissionRow}} 
+        {{> submissionRow}}
         {{/each}}
       </tbody>
     </table>
     <div class="divider"></div>
   </div>
   <div class="container">
-    <h4>{{_ "dashboard-application_canceled"}}</h4>
+    <h5>{{_ "dashboard-application_canceled"}}</h5>
     <table class="striped js-sortable" data-sortlist="[[3,0]]">
       <thead>
         <tr>
@@ -75,7 +75,7 @@
 
       <tbody>
         {{#each canceledApplications}}
-          {{> submissionRow}} 
+          {{> submissionRow}}
         {{/each}}
       </tbody>
     </table>
