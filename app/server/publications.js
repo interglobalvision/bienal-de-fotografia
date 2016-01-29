@@ -78,3 +78,12 @@ Meteor.publish('allNotes', function() {
 
   return Notes.find();
 });
+
+// Applicant Email
+Meteor.publish('applicantEmail', function(userId) {
+  if (!Roles.userIsInRole(this.userId, ['admin'])) {
+    throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error', '335');
+  }
+
+  return Meteor.users.find({ '_id': userId }, { fields: { emails: 1 } });
+});
