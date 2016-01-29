@@ -37,6 +37,7 @@
     "moment",
     "Email",
     "check",
-    "Ratings"
+    "Ratings",
+    "Notes"
   ]
 }
