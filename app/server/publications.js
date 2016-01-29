@@ -68,11 +68,11 @@ Meteor.publish('notes', function(userId, applicationId) {
     throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error', '334');
   }
 
-  return Notes.find({userId: userId, applicationId: applicationId});
+  return Notes.find({userId: userId, applicationId: applicationId,});
 });
 
 Meteor.publish('allNotes', function() {
-  if (!Roles.userIsInRole(this.userId, ['admin'])) {
+  if (!Roles.userIsInRole(this.userId, ['admin',])) {
     throw new Meteor.Error('not-allowed', 'You must be more powerful aka No Juice Error', '335');
   }
 

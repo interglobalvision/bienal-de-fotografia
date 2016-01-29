@@ -52,8 +52,8 @@ Router.map(function() {
 
     data: function() {
       return {
-        applications: Applications.find({ status: { $not: 'canceled'} }),
-        canceledApplications: Applications.find({ status: 'canceled' }),
+        applications: Applications.find({status: {$not: 'canceled',},}),
+        canceledApplications: Applications.find({status: 'canceled',}),
       };
     },
   });
