@@ -47,6 +47,19 @@ Template.submissionReview.helpers({
     return false;
   },
 
+  applicantEmail: function() {
+    var _this = this;
+
+    var applicantId = _this.userId;
+
+    var user = Meteor.users.findOne({ '_id': applicantId });
+
+    if(!user) {
+      return false;
+    }
+    return user.emails[0].address;
+  }
+
 });
 
 Template.submissionReview.onCreated(function() {
@@ -55,6 +68,7 @@ Template.submissionReview.onCreated(function() {
   _this.autorun(function () {
     Meteor.subscribe('ratings', Meteor.userId());
     Meteor.subscribe('notes', Meteor.userId(), _this.data.application._id);
+    Meteor.subscribe('applicantEmail', _this.data.application.userId);
     Meteor.subscribe('committeeUsers');
 
     $('textarea').trigger('autoresize');
