@@ -47,7 +47,7 @@ Template.admin.events({
         if (error) {
           alert(error);
         } else {
-          Materialize.toast('User removed', 3000);
+          Materialize.toast(TAPi18n.__('userRemoved'), 3000);
         }
       });
     } else {

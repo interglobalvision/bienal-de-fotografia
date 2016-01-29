@@ -52,7 +52,7 @@ Router.map(function() {
         var userApplication = Applications.findOne();
 
         // If application have been submitted redirect to: /gracias
-        if ( userApplication.status === 'submitted' ) {
+        if ( userApplication.status === 'submitted' || userApplication.status === 'canceled' ) {
           Router.go('/gracias');
         }
 
