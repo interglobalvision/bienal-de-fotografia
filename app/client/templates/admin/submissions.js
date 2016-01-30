@@ -25,7 +25,7 @@ Template.submissions.helpers({
   },
 
   applicationsCount: function() {
-    return Applications.find({status: { $in: [ 'submitted', 'saved', ], }, }).count();
+    return Applications.find({status: {$in: [ 'submitted', 'saved', ],},}).count();
   },
 
 });
@@ -89,5 +89,3 @@ Template.submissions.events({
     }
   },
 });
-
-

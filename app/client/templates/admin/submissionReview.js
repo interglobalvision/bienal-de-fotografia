@@ -4,7 +4,7 @@ Template.submissionReview.helpers({
     var application = Applications.findOne();
     var rating = Ratings.findOne({
       userId: userId,
-      applicationId: application._id
+      applicationId: application._id,
     }, {
       'rating': true,
     });
@@ -20,7 +20,7 @@ Template.submissionReview.helpers({
     var application = Applications.findOne();
     var note = Notes.findOne({
       userId: Meteor.userId(),
-      applicationId: application._id
+      applicationId: application._id,
     }, {
       'note': true,
     });
@@ -28,6 +28,7 @@ Template.submissionReview.helpers({
     if (note) {
       return note.note;
     } 
+
     return false;
   },
 
@@ -36,7 +37,7 @@ Template.submissionReview.helpers({
     var application = Applications.findOne();
     var note = Notes.findOne({
       userId: userId,
-      applicationId: application._id
+      applicationId: application._id,
     }, {
       'note': true,
     });
@@ -44,6 +45,7 @@ Template.submissionReview.helpers({
     if (note) {
       return new Handlebars.SafeString(note.note.replace(/\n/g, '<br>'));
     }
+
     return false;
   },
 
@@ -75,7 +77,7 @@ Template.submissionReview.onCreated(function() {
 
   });
 
-  if( Roles.userIsInRole( Meteor.userId(), ['admin'] ) ) {
+  if( Roles.userIsInRole( Meteor.userId(), ['admin',] ) ) {
     _this.autorun(function () {
       Meteor.subscribe('allRatings');
       Meteor.subscribe('allNotes');
@@ -117,6 +119,7 @@ Template.submissionReview.events({
       }
     });
   },
+
   'click #save-note': function(e) {
     var _this = this,
       note = $('#note-textarea').val(),

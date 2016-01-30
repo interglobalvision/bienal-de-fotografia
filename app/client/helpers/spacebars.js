@@ -64,6 +64,7 @@ Handlebars.registerHelper('formatWithLinebreak', function(text) {
   if (text) {
     return new Handlebars.SafeString(text.replace(/\n/g, '<br>'));
   } 
+
   return false;
 });
 
