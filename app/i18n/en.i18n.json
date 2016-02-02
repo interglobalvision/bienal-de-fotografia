@@ -96,7 +96,7 @@
     "createUser": "Crear Usuario",
     "userRemoved": "Usuario eliminado",
     "applicationCanceled": "Solicitud cancelada",
-    "applicationCanceled": "Solicitud restaurada",
+    "applicationRestored": "Solicitud restaurada",
     "confirmCancelApplication": "¿Estás seguro que deseas cancelar esta solicitud?",
     "confirmRestoreApplication": "¿Estás seguro que deseas restaurar esta solicitud?"
   },
