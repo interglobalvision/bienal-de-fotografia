@@ -47,6 +47,7 @@ Template.application.events({
 
   // Open modal with terms and conditions on click in the field label
   'click #terms-field label': function(e) {
+    e.preventDefault();
      $('#terms-modal').openModal();
   },
 
