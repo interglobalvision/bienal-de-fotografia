@@ -176,6 +176,7 @@ ApplicationSchema = new SimpleSchema({
   acceptTerms: {
     type: Boolean,
     allowedValues: [true,],
+    label: "Aceptar Terminos y Condiciones",
     autoform: {
       type: 'boolean-checkbox',
     },
